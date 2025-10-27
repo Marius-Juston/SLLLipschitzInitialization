@@ -1,3 +1,4 @@
+import random
 from typing import Type, Optional
 
 import matplotlib
@@ -15,6 +16,8 @@ import torch
 
 torch.set_float32_matmul_precision('high')
 import torch.nn.functional as F
+
+DPI = 600
 
 
 def histogram(xs, bins=100, density=False):
@@ -100,7 +103,7 @@ def distribution(W):
     return W @ torch.diag(T)
 
 
-def distribution_test(Nmax=300, normalized=False, graph=False, set_n=False):
+def distribution_test(Nmax=300, normalized=False, graph=False, set_n=False, plot=True):
     Ns = np.arange(1, Nmax + 1)
     stds = []
 
@@ -198,7 +201,12 @@ def distribution_test(Nmax=300, normalized=False, graph=False, set_n=False):
 
     plt.legend()
     plt.tight_layout()
-    plt.savefig('../../figs/VariancePerDimensionSize.png', dpi=300)
+    plt.savefig('../../figs/VariancePerDimensionSize.png', dpi=DPI)
+
+    if plot:
+        plt.show()
+
+    plt.close('all')
 
     return 0
 
@@ -221,7 +229,7 @@ def uniform_test():
     print(out.mean(), total, n, total / n)
 
 
-def multi_layer_distribution_test(N=1000, n=10, L=5, multi: Optional[bool] = None):
+def multi_layer_distribution_test(N=1000, n=10, L=5, multi: Optional[bool] = None, bias=False, plot=True):
     device = 'cuda'
 
     N = N
@@ -260,8 +268,11 @@ def multi_layer_distribution_test(N=1000, n=10, L=5, multi: Optional[bool] = Non
         dls.append(dl)
 
         W = torch.randn((dl, nl), device=device)
-        b = torch.randn(dl, device=device)
-        # b = torch.zeros(dl, device=device)
+
+        if bias:
+            b = torch.randn(dl, device=device)
+        else:
+            b = torch.zeros(dl, device=device)
 
         # nn.init.xavier_normal_(W)
         # fan_in, _ = nn.init._calculate_fan_in_and_fan_out(W)
@@ -304,8 +315,12 @@ def multi_layer_distribution_test(N=1000, n=10, L=5, multi: Optional[bool] = Non
     plt.xlabel("Activation output $y_l$")
     plt.ylabel("Histogram Frequency")
     plt.tight_layout()
-    plt.savefig("../../figs/HistVarianceActivation.png", dpi=300)
-    plt.show()
+    plt.savefig(f"../../figs/HistVarianceActivation{'B' if bias else ''}.png", dpi=DPI)
+
+    if plot:
+        plt.show()
+
+    plt.close('all')
 
     Ls = np.arange(1, L + 2)
 
@@ -322,23 +337,29 @@ def multi_layer_distribution_test(N=1000, n=10, L=5, multi: Optional[bool] = Non
 
     print(np.cumprod(decay_rate))
 
-    plt.plot(Ls_v, np.cumprod(decay_rate), label='theoretical')
-    plt.plot(Ls_v, np.cumprod(1 / 2 * ns / dls), label='theoretical upper')
-    plt.title("Activation Variance within layers")
-    # plt.ylim(bottom=.9, top=1.1)
+    if not bias:
+        plt.plot(Ls_v, np.cumprod(decay_rate), label='theoretical')
+        plt.plot(Ls_v, np.cumprod(1 / 2 * ns / dls), label='theoretical upper')
+        plt.title("Activation Variance within layers")
+
+        plt.yscale('log')
+    else:
+        plt.ylim(bottom=.9, top=1.1)
 
     plt.xlabel("Layer number")
     plt.ylabel("Variance")
-    plt.yscale('log')
 
     plt.grid()
 
     plt.legend()
     plt.tight_layout()
 
-    plt.savefig("../../figs/VarianceActivation.png", dpi=300)
+    plt.savefig(f"../../figs/VarianceActivation{'B' if bias else ''}.png", dpi=DPI)
 
-    plt.show()
+    if plot:
+        plt.show()
+
+    plt.close('all')
 
 
 class LinearL(nn.Module):
@@ -378,7 +399,7 @@ class LinearL(nn.Module):
         return x_L1
 
 
-def gradient_multi_layer_distribution_test(N=10000, n=10, L=5, Nb=25, bias=True):
+def gradient_multi_layer_distribution_test(N=10000, n=10, L=5, Nb=25, bias=True, plot=True):
     device = 'cuda'
 
     N = N
@@ -435,9 +456,12 @@ def gradient_multi_layer_distribution_test(N=10000, n=10, L=5, Nb=25, bias=True)
     plt.xlabel("Gradient Activation output $x_l$")
     plt.ylabel("Histogram Frequency")
     plt.tight_layout()
-    plt.savefig(f"../../figs/HistGradVarianceActivation{'B' if bias else ''}.png", dpi=300)
+    plt.savefig(f"../../figs/HistGradVarianceActivation{'B' if bias else ''}.png", dpi=DPI)
 
-    plt.show()
+    if plot:
+        plt.show()
+
+    plt.close('all')
 
     vars = np.array(vars)
 
@@ -447,8 +471,11 @@ def gradient_multi_layer_distribution_test(N=10000, n=10, L=5, Nb=25, bias=True)
 
     plt.plot(Ls, vars, label=f'sampled {"($b_l = 0$)" if not bias else ""}')
 
-    plt.plot(Ls, (decay_rate ** (L - 1 - Ls + 1 + 1)) * scaling_factor, label='theoretical')
-    plt.plot(Ls, ((1 / 2) ** (L - 1 - Ls + 1 + 1)) * scaling_factor, label='theoretical upper')
+    theoretical = (decay_rate ** (L - 1 - Ls + 1 + 1)) * scaling_factor
+    theoretical_upper = ((1 / 2) ** (L - 1 - Ls + 1 + 1)) * scaling_factor
+
+    plt.plot(Ls, theoretical, label='theoretical')
+    plt.plot(Ls, theoretical_upper, label='theoretical upper')
 
     plt.title("Gradient Activation Variance within layers")
 
@@ -461,9 +488,14 @@ def gradient_multi_layer_distribution_test(N=10000, n=10, L=5, Nb=25, bias=True)
     plt.legend()
     plt.tight_layout()
 
-    plt.savefig(f"../../figs/GradientVarianceActivation{'B' if bias else ''}.png", dpi=300)
+    plt.savefig(f"../../figs/GradientVarianceActivation{'B' if bias else ''}.png", dpi=DPI)
 
-    plt.show()
+    if plot:
+        plt.show()
+
+    plt.close('all')
+
+    return Ls, theoretical, theoretical_upper, vars
 
 
 def decay(n, dl=None):
@@ -487,19 +519,79 @@ class VReLU(nn.Module):
         return self.relu(self.factor * x)
 
 
+def set_seed(seed=0):
+    np.random.seed(seed)
+    random.seed(seed)
+    torch.manual_seed(seed)
+
+
+def plot_grouped_gradients_variance(Ls, theoretical, theoretical_upper, sampled_grad, sampled_grad_b, plot=True):
+    plt.plot(Ls, sampled_grad, label=f'sampled')
+    plt.plot(Ls, sampled_grad_b, label=f'sampled ($b_l = 0$)')
+
+    plt.plot(Ls, theoretical, label='theoretical')
+    plt.plot(Ls, theoretical_upper, label='theoretical upper')
+
+    plt.title("Gradient Activation Variance within layers")
+
+    plt.xlabel("Layer num")
+    plt.ylabel("Variance")
+    plt.yscale('log')
+
+    plt.grid()
+
+    plt.legend()
+    plt.tight_layout()
+
+    plt.savefig(f"../../figs/GradientVarianceActivationGroup.png", dpi=DPI)
+
+    if plot:
+        plt.show()
+
+    plt.close('all')
+
+
+def paper_figures():
+    plot = False
+
+    L = 15
+
+    multi_layer_distribution_test(N=10_000, L=L, n=4096 * 2, multi=None, plot=plot)
+    multi_layer_distribution_test(N=10_000, L=L, n=4096 * 2, multi=None, bias=True, plot=plot)
+
+    Ls, theoretical, theoretical_upper, sampled_grad = gradient_multi_layer_distribution_test(L=L, n=2024, bias=False,
+                                                                                              plot=plot)
+    Ls, theoretical, theoretical_upper, sampled_grad_b = gradient_multi_layer_distribution_test(L=L, n=2024, bias=True,
+                                                                                                plot=plot)
+
+    plot_grouped_gradients_variance(Ls, theoretical, theoretical_upper, sampled_grad, sampled_grad_b, plot=plot)
+
+    distribution_test(normalized=False, graph=False, set_n=False, plot=plot)
+
+
 if __name__ == '__main__':
-    # multi_layer_distribution_test(L=12, n=4096 * 2, multi=False)
+    paper_figures()
+
+    # L = 13
+    #
+    # multi_layer_distribution_test(L=L, n=4096 * 2, multi=False, bias=False)
+    # multi_layer_distribution_test(L=L, n=4096 * 2, multi=False, bias=True)
+    #
+
     # multi_layer_distribution_test(N=10_000, L=13, n=1, multi=True)
-    # multi_layer_distribution_test(N=10_000, L=13, n=4096 * 2, multi=None)
-    # gradient_multi_layer_distribution_test(L=15, n=2024, bias=False)
-    # gradient_multi_layer_distribution_test(L=15, n=2024, bias=True)
+
+    # plot = False
+    #
+    # L = 15
+    #
+    # multi_layer_distribution_test(N=10_000, L=L, n=4096 * 2, multi=None, plot=plot)
+    # multi_layer_distribution_test(N=10_000, L=L, n=4096 * 2, multi=None, bias=True, plot=plot)
+    #
+    # gradient_multi_layer_distribution_test(L=L, n=2024, bias=False, plot=plot)
+    # gradient_multi_layer_distribution_test(L=L, n=2024, bias=True, plot=plot)
     # uniform_test()
 
     # check()
 
-    distribution_test(normalized=False, graph=False, set_n=False)
+    # distribution_test(normalized=False, graph=False, set_n=False, plot=plot)
     # distribution_test(normalized=False, graph=False)
-
-    plt.legend()
-    plt.tight_layout()
-    plt.show()
