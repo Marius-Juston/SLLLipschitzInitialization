@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import torch
 
-from distribution import histogram
+from distribution.distribution import histogram
 
 if __name__ == '__main__':
     s_w = 2
@@ -49,11 +49,10 @@ if __name__ == '__main__':
 
         means_s2.append(expectation_2.item())
 
-        theoretical_expectation_2 =  n * s_w**2
+        theoretical_expectation_2 = n * s_w ** 2
 
         print(expectation_2, theoretical_expectation_2)
 
-
     plt.plot(ns, means_s2, label='actual')
-    plt.plot(ns, ns * s_w**2, label='theoretical')
+    plt.plot(ns, ns * s_w ** 2, label='theoretical')
     plt.show()

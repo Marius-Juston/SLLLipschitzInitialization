@@ -1,15 +1,14 @@
-import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib import cm
+import numpy as np
 from mpl_toolkits.mplot3d import Axes3D
 
 
 def laplace(nl, dl):
-    return 2 / (2 * dl**(1/2) * (nl - 1) + (dl - 1)*dl + 2)
+    return 2 / (2 * dl ** (1 / 2) * (nl - 1) + (dl - 1) * dl + 2)
 
 
 def normal(nl, dl):
-    return 1 / (dl**(1/2) * (dl**(1/2) + nl - 1))
+    return 1 / (dl ** (1 / 2) * (dl ** (1 / 2) + nl - 1))
 
 
 def uniform(nl, dl):

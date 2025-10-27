@@ -1,10 +1,9 @@
-import os
-from typing import Type, Tuple
+from typing import Type
 
 import numpy as np
 import torch
 
-from distribution import VReLU, decay
+from distribution.distribution import decay
 
 # The flag below controls whether to allow TF32 on matmul. This flag defaults to False
 # in PyTorch 1.12 and later.
@@ -16,8 +15,8 @@ torch.backends.cudnn.allow_tf32 = True
 torch.set_float32_matmul_precision('high')
 
 from sklearn.datasets import fetch_covtype
-from torch import nn, Tensor
-from torch.nn import Sequential, Softmax, ReLU, Linear
+from torch import nn
+from torch.nn import Sequential, Softmax, ReLU
 from torch.optim import Adam
 from torch.utils.data import TensorDataset, random_split, DataLoader
 from torch.utils.tensorboard import SummaryWriter

@@ -36,7 +36,6 @@ if __name__ == '__main__':
     count, bins = torch.histogram(Z, 100)
     plt.stairs(count, bins, label='sampled')
 
-
     m = Chi2(torch.tensor([nl]))
     Q = m.sample((N,))
     R = m.sample((N,))

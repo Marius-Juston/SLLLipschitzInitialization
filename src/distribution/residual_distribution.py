@@ -3,11 +3,10 @@ import os.path
 import matplotlib
 import numpy as np
 from matplotlib.axes import Axes
-from torch import nn
 from torch.nn import ReLU
 
-from off_term_distributions import expected_value
 from models.layers import safe_inv
+from off_term_distributions import expected_value
 
 matplotlib.use('TkAgg')
 import math
@@ -47,7 +46,7 @@ def forward(x, W, b, act):
 
     denom = t
 
-    return out, x, res  #, num, denom
+    return out, x, res  # , num, denom
 
 
 def covariance_value(Nmax=50, graph=False, std=1., dl=1, normal=True, save=False, use_saved=False, Nmin=2):
@@ -180,7 +179,6 @@ def covariance_value(Nmax=50, graph=False, std=1., dl=1, normal=True, save=False
             delim = ','
 
             np.savetxt(save_file, all_data, delimiter=delim, header=delim.join(names))
-
 
     fig, axs = plt.subplots(nrows=2, ncols=len(means))
     for i, (n, m) in enumerate(zip(names, means)):

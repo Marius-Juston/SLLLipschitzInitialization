@@ -3,12 +3,9 @@ import numpy as np
 import scipy
 import sympy
 import torch
-from matplotlib.axes import Axes
 from matplotlib.figure import Figure
-from scipy.special import kv
-from sympy import gamma
 
-from distribution import histogram
+from distribution.distribution import histogram
 
 
 def difference(v, n, s, abs=False):

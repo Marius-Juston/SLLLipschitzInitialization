@@ -1,10 +1,8 @@
-from functools import partial
 from typing import Type, Optional
 
 import matplotlib
 from torch import nn, Tensor, autograd
-from torch.nn import ReLU, Softplus, GELU, Tanh, ELU, Sequential
-from torch.nn.init import calculate_gain
+from torch.nn import ReLU, Sequential
 
 from off_term_distributions import expected_value
 

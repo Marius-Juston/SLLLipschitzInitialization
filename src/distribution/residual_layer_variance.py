@@ -6,7 +6,7 @@ from matplotlib.axes import Axes
 from matplotlib.figure import Figure
 from torch.nn import ReLU
 
-from distribution import histogram
+from distribution.distribution import histogram
 from models.layers import safe_inv
 
 torch.set_float32_matmul_precision('high')
