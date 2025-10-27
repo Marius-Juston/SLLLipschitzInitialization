@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import torch
 
-from distribution.distribution import histogram
+from distribution import histogram
 
 if __name__ == '__main__':
     s_w = 2

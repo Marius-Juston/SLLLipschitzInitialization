@@ -24,7 +24,7 @@ if __name__ == '__main__':
     funcs = [laplace, normal, uniform]
     colors = ['r', 'g', "b"]
 
-    fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
+    fig, ax = plt.subplots(subplot_kw={"projection": "3d"}, figsize=(5, 5))
     ax: Axes3D
 
     for f, c in zip(funcs, colors):
@@ -41,5 +41,5 @@ if __name__ == '__main__':
 
     plt.tight_layout()
 
-    plt.savefig("../../figs/GeneralizedVariance.png", dpi=300)
+    plt.savefig("../../figs/GeneralizedVariance.png", dpi=600)
     plt.show()

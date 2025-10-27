@@ -2,14 +2,7 @@ import matplotlib.pyplot as plt
 import torch
 from torch.distributions.beta import Beta
 
-
-def histogram(xs, bins):
-    # Like torch.histogram, but works with cuda
-    min, max = xs.min(), xs.max()
-    counts = torch.histc(xs, bins, min=min, max=max)
-    boundaries = torch.linspace(min, max, bins + 1)
-    return counts, boundaries
-
+from distribution import histogram
 
 if __name__ == '__main__':
 
@@ -33,18 +26,21 @@ if __name__ == '__main__':
         mean = transformed.mean()
         variance = transformed.var()
 
-        freq, count = histogram(transformed ** 2, 100)
+        freq, count = histogram(transformed ** 2, 100, density=True)
 
         plt.stairs(freq.cpu(), count, label='actual')
 
         distri = Beta(torch.tensor([1 / 2]), torch.tensor([(dl - 1) / 2]))
         sample = distri.sample((N,))
 
-        freq, count = histogram(sample, 100)
+        freq, count = histogram(sample, 100, density=True)
 
         print(mean, variance, distri.mean)
 
         plt.stairs(freq.cpu(), count, label='theoretical')
 
         plt.legend()
-        plt.show()
+
+        plt.savefig(f'../../figs/upper_bound_distribution/upper_bound_distribution_{dl}.png', dpi=600)
+
+        plt.close('all')

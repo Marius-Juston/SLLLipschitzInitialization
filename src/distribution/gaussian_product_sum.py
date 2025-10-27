@@ -5,7 +5,7 @@ import sympy
 import torch
 from matplotlib.figure import Figure
 
-from distribution.distribution import histogram
+from distribution import histogram
 
 
 def difference(v, n, s, abs=False):

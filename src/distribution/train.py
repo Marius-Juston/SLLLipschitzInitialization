@@ -3,7 +3,7 @@ from typing import Type
 import numpy as np
 import torch
 
-from distribution.distribution import decay
+from distribution import decay
 
 # The flag below controls whether to allow TF32 on matmul. This flag defaults to False
 # in PyTorch 1.12 and later.
