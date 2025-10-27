@@ -50,10 +50,10 @@ class SDPBasedLipschitzConvLayer(nn.Module):
         return out
 
 
-class SDPBasedLipschitzLinearLayer(nn.Module):
+class SDPBasedLipschitzLayer(nn.Module):
 
-    def __init__(self, cin, inner_dim):
-        super(SDPBasedLipschitzLinearLayer, self).__init__()
+    def __init__(self, cin, inner_dim, bias_init=True):
+        super(SDPBasedLipschitzLayer, self).__init__()
 
         inner_dim = inner_dim if inner_dim != -1 else cin
         self.activation = nn.ReLU()
@@ -63,9 +63,11 @@ class SDPBasedLipschitzLinearLayer(nn.Module):
         self.q = nn.Parameter(torch.randn(inner_dim))
 
         nn.init.xavier_normal_(self.weight)
-        fan_in, _ = nn.init._calculate_fan_in_and_fan_out(self.weight)
-        bound = 1 / np.sqrt(fan_in)
-        nn.init.uniform_(self.bias, -bound, bound)  # bias init
+
+        if bias_init:
+            fan_in, _ = nn.init._calculate_fan_in_and_fan_out(self.weight)
+            bound = 1 / np.sqrt(fan_in)
+            nn.init.uniform_(self.bias, -bound, bound)  # bias init
 
     def compute_t(self):
         q = torch.exp(self.q)
@@ -75,6 +77,12 @@ class SDPBasedLipschitzLinearLayer(nn.Module):
         return t
 
     def forward(self, x):
+        raise NotImplementedError()
+
+
+class SDPBasedLipschitzResNetLayer(SDPBasedLipschitzLayer):
+
+    def forward(self, x):
         t = self.compute_t()
         res = F.linear(x, self.weight)
         res = res + self.bias
@@ -82,6 +90,17 @@ class SDPBasedLipschitzLinearLayer(nn.Module):
         res = 2 * F.linear(res, self.weight.T)
         out = x - res
         return out
+
+
+class SDPBasedLipschitzLinearLayer(SDPBasedLipschitzLayer):
+
+    def forward(self, x):
+        t = self.compute_t()
+
+        W = self.weight @ torch.diag(t)
+
+        res = F.linear(x, W, self.bias)
+        return self.activation(res)
 
 
 class PaddingChannels(nn.Module):
