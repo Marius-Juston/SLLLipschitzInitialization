@@ -6,7 +6,14 @@ import torch.nn.functional as F
 
 def safe_inv(x):
     mask = x == 0
-    x_inv = x ** (-1)
+    x_inv = x.reciprocal()
+    x_inv[mask] = 0
+    return x_inv
+
+
+def safe_invsqrt(x: torch.Tensor):
+    mask = x == 0
+    x_inv = x.rsqrt()
     x_inv[mask] = 0
     return x_inv
 
@@ -52,15 +59,17 @@ class SDPBasedLipschitzConvLayer(nn.Module):
 
 class SDPBasedLipschitzLayer(nn.Module):
 
-    def __init__(self, cin, inner_dim, bias_init=True):
+    def __init__(self, cin, inner_dim, bias_init=True, device=None, dtype=None):
         super(SDPBasedLipschitzLayer, self).__init__()
+
+        self.factory_kwargs = {'device': device, 'dtype': dtype}
 
         inner_dim = inner_dim if inner_dim != -1 else cin
         self.activation = nn.ReLU()
 
-        self.weight = nn.Parameter(torch.empty(inner_dim, cin))
-        self.bias = nn.Parameter(torch.empty(1, inner_dim))
-        self.q = nn.Parameter(torch.randn(inner_dim))
+        self.weight = nn.Parameter(torch.empty(inner_dim, cin, **self.factory_kwargs))
+        self.bias = nn.Parameter(torch.empty(1, inner_dim, **self.factory_kwargs))
+        self.q = nn.Parameter(torch.randn(inner_dim, **self.factory_kwargs))
 
         nn.init.xavier_normal_(self.weight)
 
@@ -93,11 +102,17 @@ class SDPBasedLipschitzResNetLayer(SDPBasedLipschitzLayer):
 
 
 class SDPBasedLipschitzLinearLayer(SDPBasedLipschitzLayer):
+    def compute_t(self):
+        q = torch.exp(self.q)
+        q_inv = torch.exp(-self.q)
+        t = torch.abs(torch.einsum('i,ik,kj,j -> ij', q_inv, self.weight, self.weight.T, q)).sum(1)
+        t = safe_invsqrt(t)
+        return t
 
     def forward(self, x):
         t = self.compute_t()
 
-        W = self.weight @ torch.diag(t)
+        W = torch.diag(t) @ self.weight
 
         res = F.linear(x, W, self.bias)
         return self.activation(res)

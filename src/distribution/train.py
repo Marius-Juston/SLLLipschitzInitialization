@@ -3,7 +3,7 @@ from typing import Type
 import numpy as np
 import torch
 
-from distribution import decay
+from distribution.distribution import decay
 
 # The flag below controls whether to allow TF32 on matmul. This flag defaults to False
 # in PyTorch 1.12 and later.
@@ -180,12 +180,14 @@ def train_loop(dataloader, model, loss_fn, optimizer, summary_writer: SummaryWri
         train_loss += loss.item()
 
         if batch % 100 == 0:
-            loss, current = loss.item(), batch * batch_size + len(X)
+            loss, current = loss.item(), batch * dataloader.batch_size + len(X)
             print(f"loss: {loss:>7f}  [{current:>5d}/{size:>5d}]")
 
     train_loss /= num_batches
 
     summary_writer.add_scalar('loss/train', train_loss, global_step=epoch)
+
+    return train_loss
 
 
 def test_loop(dataloader, model, loss_fn, summary_writer, epoch):
@@ -211,6 +213,8 @@ def test_loop(dataloader, model, loss_fn, summary_writer, epoch):
     summary_writer.add_scalar('loss/correct', correct, global_step=epoch)
 
     print(f"Test Error: \n Accuracy: {(100 * correct):>0.1f}%, Avg loss: {test_loss:>8f} \n")
+
+    return test_loss, correct
 
 
 def vizualize_weights(model: SequentialClassifier, summary_writer: SummaryWriter, epoch):
@@ -274,9 +278,11 @@ if __name__ == '__main__':
                 log_dir=f'runs/{name}_lr{lr}_n{n_layers}_act{activation.__name__}_g{int(gradient)}')
             # summary_writer.add_graph(model, next(iter(train_dataloader))[0])
 
+            losses = []
+
             for t in range(epochs):
                 print(f"Epoch {t + 1}\n-------------------------------")
-                train_loop(train_dataloader, model, loss_fn, optimizer, summary_writer, t)
+                loss = train_loop(train_dataloader, model, loss_fn, optimizer, summary_writer, t)
 
                 vizualize_weights(model, summary_writer, t)
 
