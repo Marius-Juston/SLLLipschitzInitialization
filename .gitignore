@@ -1,5 +1,10 @@
 #Figures
 figs/
+figs/tb_plots/
+
+#Training
+runs/
+data/
 
 outcmaes/
 all-logs/
