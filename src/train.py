@@ -18,6 +18,35 @@ def vizualize_weights(model: LipschitzLinearNetwork, summary_writer: SummaryWrit
         summary_writer.add_histogram(n, p, global_step=epoch)
 
 
+class LinearNetwork(nn.Module):
+
+    def __init__(self, in_features, out_features, n_dense=15, dense_inner_dim=256, device=None, dtype=None):
+        super(LinearNetwork, self).__init__()
+
+        self.factory_kwargs = {'device': device, 'dtype': dtype}
+
+        self.n_dense = n_dense
+        self.dense_inner_dim = dense_inner_dim
+        self.out_features = out_features
+        self.in_features = in_features
+
+        self.model = []
+
+        in_features = in_features
+
+        for _ in range(self.n_dense):
+            self.model.append(nn.Linear(in_features, dense_inner_dim, **self.factory_kwargs))
+            self.model.append(nn.ReLU())
+
+            in_features = dense_inner_dim
+
+        self.model.append(nn.Linear(in_features, out_features, **self.factory_kwargs))
+        self.model = nn.Sequential(*self.model)
+
+    def forward(self, x):
+        return self.model(x)
+
+
 if __name__ == '__main__':
     torch.manual_seed(0)
     np.random.seed(0)
@@ -47,19 +76,26 @@ if __name__ == '__main__':
     lr = 1e-3
     dense_inner_dim = 64
 
+    lipschitz_network = False
+
     for n_layers in [5, 15, 30]:
 
         n_inputs = len(data.feature_names)
         n_outputs = target.max() + 1
 
-        for bias_init in [True, False]:
+        for bias_init in [True, ]:
 
             for sample in range(10):
                 train_dataloader = DataLoader(train, shuffle=True, batch_size=batch_size)
                 test_dataloader = DataLoader(test, shuffle=True, batch_size=batch_size)
 
-                model = LipschitzLinearNetwork(in_features=n_inputs, out_features=n_outputs, n_dense=n_layers,
-                                               bias_init=bias_init, device=device, dense_inner_dim=dense_inner_dim)
+                if lipschitz_network:
+                    model = LipschitzLinearNetwork(in_features=n_inputs, out_features=n_outputs, n_dense=n_layers,
+                                                   bias_init=bias_init, device=device, dense_inner_dim=dense_inner_dim)
+
+                else:
+                    model = LinearNetwork(in_features=n_inputs, out_features=n_outputs, n_dense=n_layers, device=device,
+                                          dense_inner_dim=dense_inner_dim)
 
                 name = model.__class__.__name__
 
@@ -71,7 +107,7 @@ if __name__ == '__main__':
                 optimizer = Adam(model.parameters(), lr=lr)
                 loss_fn = nn.CrossEntropyLoss()
                 summary_writer = SummaryWriter(
-                    log_dir=f'../runs/{name}_lr{lr}_n{n_layers}_b{bias_init}_{sample}')
+                    log_dir=f'../runs{'_lipschitz' if lipschitz_network else ''}/{name}_lr{lr}_n{n_layers}_b{bias_init}_{sample}')
 
                 train_losses = []
                 test_losses = []
@@ -89,7 +125,7 @@ if __name__ == '__main__':
                     test_losses.append(test_loss)
                     accuracies.append(accuracy)
 
-                data = {
+                results = {
                     'name': name,
                     'n_layers': n_layers,
                     'bias_init': bias_init,
@@ -97,12 +133,12 @@ if __name__ == '__main__':
                     'dense_inner_dim': dense_inner_dim,
                     'lr': lr,
                     'batch_size': batch_size,
-                    'epochs' : epochs,
+                    'epochs': epochs,
                 }
 
                 path = Path(summary_writer.get_logdir())
 
                 with open(path / 'data.json', 'w') as f:
-                    json.dump(data, f)
+                    json.dump(results, f)
 
                 print("Done!")

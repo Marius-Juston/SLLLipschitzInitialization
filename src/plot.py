@@ -269,6 +269,83 @@ def plot_grid_by_layers_bias(df: pd.DataFrame, outdir: str, tag: str = "loss/tra
     plt.close(fig)
     print(f"[saved] {out}")
 
+def plot_grid_by_layers_bias_comp(df: pd.DataFrame, df_comp: pd.DataFrame, outdir: str, tag: str = "loss/train"):
+    """
+    Create a grid with rows = [5, 15, 30], cols = [bias=True, bias=False].
+    Each panel shows individual *samples* (no aggregation) for the chosen tag.
+    """
+    rows = [5, 15, 30]
+    cols = [False, True]
+
+    sub = df[(df["tag"] == tag) & (df["n_layers"].isin(rows))].copy()
+    if sub.empty:
+        sys.stderr.write(f"[warn] No data for tag '{tag}' among n_layers {rows}, skipping grid.\n")
+        return
+
+    fig, axes = plt.subplots(nrows=len(rows), ncols=len(cols), figsize=(12, 9), sharex=True, sharey=True)
+    if len(rows) == 1 and len(cols) == 1:
+        axes = [[axes]]
+
+    for i, nl in enumerate(rows):
+        for j, b in enumerate(cols):
+            ax = axes[i][j]
+            cell = sub[(sub["n_layers"] == nl) & (sub["bias_init"] == b)]
+            # One line per run_id (sample)
+
+            cell_comp = df_comp[(df_comp["tag"] == tag) & (df_comp["n_layers"] == nl)]
+
+            for rid, g in cell.groupby("run_id"):
+                # create a concise label per sample run
+                # sample_label = g["sample"].iloc[0]
+                # lr = g["lr"].iloc[0]
+                # ax.plot(g["step"], g["value"], linewidth=1.1, alpha=0.9, label=f"{sample_label} (lr={lr})")
+                ax.plot(g["step"], g["value"], c='tab:red' if b else 'tab:blue')
+
+            for rid, g in cell_comp.groupby("run_id"):
+                ax.plot(g["step"], g["value"], c='tab:green')
+
+
+            steps = cell.groupby('step')
+            means = steps['value'].mean()
+            std = steps['value'].std()
+
+            line, = ax.plot(means.index, means, label="Mean", c='k')
+            fill = ax.fill_between(means.index, means - std, means + std, alpha=0.25, color='r' if b else 'b')
+
+
+            steps_comp = cell_comp.groupby('step')
+            means_comp = steps_comp['value'].mean()
+            std_comp = steps_comp['value'].std()
+
+            line_comp, = ax.plot(means_comp.index, means_comp, label="Mean", c='k')
+            fill_comp = ax.fill_between(means_comp.index, means_comp - std_comp, means_comp + std_comp, alpha=0.25, color='g')
+
+            ax.legend(handles=[(line, fill), (line_comp, fill_comp)], labels=["Lipschitz Mean ± Std", "Linear Mean ± Std"], loc="best")
+
+            # Overall statistics
+
+            ax.set_title(f"n_layers={nl}, bias={b}")
+            ax.set_yscale('log')
+            ax.grid(True, alpha=0.3)
+            if i == len(rows) - 1:
+                ax.set_xlabel("Epoch")
+            if j == 0:
+                ax.set_ylabel(BETTER_NAME[tag])
+            # keep legends lean by limiting to first few labels if too many
+            # if cell["run_id"].nunique() <= 10:
+            #     ax.legend(fontsize=8, loc="best")
+            # else:
+            #     ax.legend([], [], frameon=False)
+
+    # fig.suptitle(f"{BETTER_NAME[tag]} per-sample\nRows: n_layers in {rows} | Cols: bias_init in {cols}", y=0.995)
+    fig.suptitle(f"{BETTER_NAME[tag]} per-sample")
+    out = os.path.join(outdir, f"{tag.replace('/', '_')}_grid_layers_bias_compared.png")
+    fig.tight_layout()
+    fig.savefig(out, dpi=DPI)
+    plt.close(fig)
+    print(f"[saved] {out}")
+
+
 
 def compute_trained_flags(df: pd.DataFrame, rel_threshold: float) -> pd.DataFrame:
     """
@@ -359,6 +436,8 @@ def plot_trained_summary(status_df: pd.DataFrame, outdir: str):
 def main():
     parser = argparse.ArgumentParser(description="Extract TensorBoard scalars and generate requested plots.")
     parser.add_argument("--runs_dir", type=str, required=True, help="Path to runs/ containing your event dirs.")
+    parser.add_argument("--compare_runs_dir", type=str, help="Path to runs/ containing your event dirs to compare with.")
+    parser.add_argument("--compare_outdir", type=str, help="The output directory saved the compairon plots.")
     parser.add_argument("--threshold", type=float, default=1e-2,
                         help="Relative threshold to deem 'trained' (default: 1e-4).")
     parser.add_argument("--outdir", type=str, default="tb_plots", help="Where to save CSV and figures.")
@@ -371,15 +450,15 @@ def main():
 
     print(f"[info] Scanning runs in: {args.runs_dir}")
 
-    csv_path = os.path.join(args.outdir, "all_scalars.csv")
+    csv_path_compare = os.path.join(args.outdir, "all_scalars.csv")
 
-    if not os.path.exists(csv_path):
+    if not os.path.exists(csv_path_compare):
         df = load_all(args.runs_dir, tags)
-        df.to_csv(csv_path, index=False)
+        df.to_csv(csv_path_compare, index=False)
     else:
         print(f"[info] Loading all scalars from {args.runs_dir} ...")
-        df = pd.read_csv(csv_path)
-    print(f"[saved] {csv_path}  ({len(df)} rows)")
+        df = pd.read_csv(csv_path_compare)
+    print(f"[saved] {csv_path_compare}  ({len(df)} rows)")
 
     # 1) Single plot: loss/train colored by n_layers
     plot_loss_colored_by_layers(df, args.outdir, tag="loss/train")
@@ -394,7 +473,24 @@ def main():
     print(f"[saved] {status_csv}")
     plot_trained_summary(status_df, args.outdir)
 
+    if args.compare_runs_dir and args.compare_outdir:
+
+        csv_path_compare = os.path.join(args.compare_outdir, "all_scalars.csv")
+
+        if not os.path.exists(csv_path_compare):
+            df_comp = load_all(args.compare_runs_dir, tags)
+            df_comp.to_csv(csv_path_compare, index=False)
+        else:
+            print(f"[info] Loading all scalars from {args.runs_dir} ...")
+            df_comp = pd.read_csv(csv_path_compare)
+        print(f"[saved] {csv_path_compare}  ({len(df)} rows)")
+
+        plot_grid_by_layers_bias_comp(df, df_comp, args.outdir, tag="loss/train")
+    else:
+        print('[info] Skipping comparison with other runs. As it is empty')
+
     print("[done] ✓")
+
 
 
 if __name__ == "__main__":

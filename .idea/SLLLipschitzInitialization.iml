@@ -5,7 +5,9 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/data" />
       <excludeFolder url="file://$MODULE_DIR$/figs/tb_plots" />
+      <excludeFolder url="file://$MODULE_DIR$/figs/tb_plots_lipschitz" />
       <excludeFolder url="file://$MODULE_DIR$/runs" />
+      <excludeFolder url="file://$MODULE_DIR$/runs_paper" />
       <excludeFolder url="file://$MODULE_DIR$/src/tb_plots" />
     </content>
     <orderEntry type="jdk" jdkName="SLLLipschitzInitialization" jdkType="Python SDK" />
