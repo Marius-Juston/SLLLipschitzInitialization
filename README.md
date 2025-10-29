@@ -20,8 +20,20 @@ To cite please use,
 
 ## Paper figures
 
-To generate the figures in the paper, run
+To generate the figures in the paper, run for generating the distribution of the intialization properties
 
 ```bash
 python src/distribution/distribution.py
+```
+
+to run the training of the networks run
+
+```bash
+python src/train.py
+```
+
+and to generate the plots you would do,
+
+```bash
+python src/plot.py --runs_dir ../runs_lipschitz --outdir figs/tb_plots_lipschitz --compare_runs_dir runs --compare_outdir figs/tb_plots 
 ```
