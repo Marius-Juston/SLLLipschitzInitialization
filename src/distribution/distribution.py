@@ -5,7 +5,7 @@ import matplotlib
 from torch import nn, Tensor, autograd
 from torch.nn import ReLU, Sequential
 
-from off_term_distributions import expected_value
+from distribution.off_term_distributions import expected_value
 
 matplotlib.use('TkAgg')
 import math
