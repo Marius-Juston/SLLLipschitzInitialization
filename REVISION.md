@@ -44,7 +44,22 @@ CIFAR-10 runs, and 90 Covertype runs. The compact profile drops feedforward dept
 test results. The scheduler refuses to change an existing campaign's profile.
 CIFAR-100 is not part of the required campaign.
 
-For a persistent background process:
+On the current host the campaign is running as the persistent user service
+`lipschitz-review-campaign.service`. Prefer these monitoring/control commands:
+
+```bash
+systemctl --user status lipschitz-review-campaign
+uv run python -m revision.campaign status
+# To stop all workers safely at their last complete epoch checkpoint:
+systemctl --user stop lipschitz-review-campaign
+# To resume this existing service:
+systemctl --user start lipschitz-review-campaign
+```
+
+The service writes `review-runs/campaign.log` and survives the tool session. The
+initial detached shell process was cleaned up by the tool runtime, so `nohup`
+alone should not be relied on when launching through that runtime. For a normal
+interactive shell (rather than this tool runtime), the alternative is:
 
 ```bash
 mkdir -p review-runs

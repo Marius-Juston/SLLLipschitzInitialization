@@ -216,6 +216,7 @@ def train(config, output, root, device, pilot_steps=0, resume=False, stop_after=
                    remaining_hours=(config['epochs']-epoch-1)*record['epoch_seconds']/3600))
         print(json.dumps(record),flush=True)
         if stop_after and epoch+1 >= stop_after:
+            write_json(output/'status.json',dict(state='paused',epoch=epoch+1,epochs=config['epochs']))
             writer.close(); return
     write_json(output/'final-diagnostics.json',diagnostics(model,val_loader,device))
     write_json(output/'status.json',dict(state='trained',epoch=config['epochs'],elapsed_seconds=time.monotonic()-started))
