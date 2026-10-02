@@ -315,3 +315,6 @@ compile_commands.json
 CTestTestfile.cmake
 _deps
 CMakeUserPresets.json
+# Reviewer revision local environments and outputs
+.venv-review/
+review-runs/

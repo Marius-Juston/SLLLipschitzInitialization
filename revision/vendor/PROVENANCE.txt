@@ -1,0 +1,5 @@
+sll_layers.py and LICENSE-SLL copied without changes from:
+https://github.com/araujoalexandre/Lipschitz-SLL-Networks
+commit 87865dbf74f07b443b595ea777edbb1d4596faf0
+source: core/models/layers.py
+Adaptation, preprocessing, training and certification are in revision/models.py and runner.py.

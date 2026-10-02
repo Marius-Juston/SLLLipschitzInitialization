@@ -77,6 +77,8 @@ class SDPBasedLipschitzLayer(nn.Module):
             fan_in, _ = nn.init._calculate_fan_in_and_fan_out(self.weight)
             bound = 1 / np.sqrt(fan_in)
             nn.init.uniform_(self.bias, -bound, bound)  # bias init
+        else:
+            nn.init.zeros_(self.bias)
 
     def compute_t(self):
         q = torch.exp(self.q)

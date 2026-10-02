@@ -1,0 +1,12 @@
+{
+  "dataset": "covertype",
+  "model": "sll",
+  "depth": 30,
+  "width": 64,
+  "bias": "default",
+  "seed": 7,
+  "epochs": 25,
+  "batch": 64,
+  "lr": 0.001,
+  "workers": 0
+}

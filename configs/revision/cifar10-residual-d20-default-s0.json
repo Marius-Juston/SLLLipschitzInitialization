@@ -1,0 +1,12 @@
+{
+  "dataset": "cifar10",
+  "model": "residual",
+  "depth": 20,
+  "width": 256,
+  "bias": "default",
+  "seed": 0,
+  "epochs": 1000,
+  "batch": 64,
+  "lr": 0.01,
+  "workers": 4
+}

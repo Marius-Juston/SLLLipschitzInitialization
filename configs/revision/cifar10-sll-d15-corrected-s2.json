@@ -1,0 +1,12 @@
+{
+  "dataset": "cifar10",
+  "model": "sll",
+  "depth": 15,
+  "width": 256,
+  "bias": "corrected",
+  "seed": 2,
+  "epochs": 100,
+  "batch": 128,
+  "lr": 0.001,
+  "workers": 4
+}

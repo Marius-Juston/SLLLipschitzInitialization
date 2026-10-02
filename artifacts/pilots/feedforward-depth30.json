@@ -1,0 +1,18 @@
+{
+  "config": {
+    "dataset": "cifar10",
+    "model": "sll",
+    "depth": 30,
+    "width": 256,
+    "bias": "zero",
+    "seed": 0,
+    "epochs": 100,
+    "batch": 128,
+    "lr": 0.001,
+    "workers": 4
+  },
+  "step_seconds": 0.030589180067181587,
+  "projected_training_hours": 0.29909420510133106,
+  "peak_gpu_bytes": 0,
+  "elapsed_seconds": 1.4499345254153013
+}

@@ -1,0 +1,8 @@
+{
+  "residual_gpu_hours": 52.27553506071369,
+  "covertype_gpu_hours": 57.161868459079415,
+  "feedforward_gpu_hours_upper_estimate": 10.767391383647919,
+  "training_wall_hours_ideal": 30.051198725860257,
+  "wall_hours_with_20_percent_reserve": 37.56399840732532,
+  "note": "Projection, not a deadline guarantee. Includes full residual/Covertype-depth30 epoch overhead; shorter pilot timing is compute-only. Evaluation and scheduling imbalance require additional time."
+}
