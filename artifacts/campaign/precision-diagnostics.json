@@ -1,0 +1,403 @@
+{
+  "dtype": "float64",
+  "purpose": "Post hoc numerical-precision check of the same float32-drawn initial parameters; no retraining.",
+  "batch_size": 128,
+  "records": {
+    "cifar10-sll-d15-zero-s0": {
+      "net.1": {
+        "second_moment": 0.009431385244959817,
+        "input_variance": 0.0018623061653646035
+      },
+      "net.2": {
+        "second_moment": 0.00029563186627462563,
+        "input_variance": 5.9302180559383426e-05
+      },
+      "net.3": {
+        "second_moment": 9.612599539963198e-06,
+        "input_variance": 1.8359728228873803e-06
+      },
+      "net.4": {
+        "second_moment": 4.016526397452068e-07,
+        "input_variance": 6.57427846364073e-08
+      },
+      "net.5": {
+        "second_moment": 1.519108851524711e-08,
+        "input_variance": 2.3708966880846204e-09
+      },
+      "net.6": {
+        "second_moment": 6.47599123356624e-10,
+        "input_variance": 8.977760902466198e-11
+      },
+      "net.7": {
+        "second_moment": 2.9097939063611327e-11,
+        "input_variance": 3.596960834783411e-12
+      },
+      "net.8": {
+        "second_moment": 1.09960910514459e-12,
+        "input_variance": 1.2920781163734323e-13
+      },
+      "net.9": {
+        "second_moment": 3.711626963288426e-14,
+        "input_variance": 4.306137591277571e-15
+      },
+      "net.10": {
+        "second_moment": 1.3411748505002662e-15,
+        "input_variance": 1.528238512863106e-16
+      },
+      "net.11": {
+        "second_moment": 5.098862152799024e-17,
+        "input_variance": 5.398221365565087e-18
+      },
+      "net.12": {
+        "second_moment": 1.8561200425743827e-18,
+        "input_variance": 1.8700968657150519e-19
+      },
+      "net.13": {
+        "second_moment": 6.110909162286107e-20,
+        "input_variance": 6.353126730777695e-21
+      },
+      "net.14": {
+        "second_moment": 2.2915862959778232e-21,
+        "input_variance": 2.297265852080898e-22
+      },
+      "net.15": {
+        "second_moment": 7.861049651080037e-23,
+        "input_variance": 8.002992969390609e-24
+      },
+      "net.16": {
+        "second_moment": 2.2140698877263845e-23,
+        "input_variance": 2.675363783440187e-24
+      }
+    },
+    "cifar10-sll-d15-zero-s1": {
+      "net.1": {
+        "second_moment": 0.01017508400218644,
+        "input_variance": 0.002055246947446316
+      },
+      "net.2": {
+        "second_moment": 0.0004488027497361994,
+        "input_variance": 7.484398833849297e-05
+      },
+      "net.3": {
+        "second_moment": 1.693031056817933e-05,
+        "input_variance": 2.6125290862168568e-06
+      },
+      "net.4": {
+        "second_moment": 7.052645891667709e-07,
+        "input_variance": 9.498321224617485e-08
+      },
+      "net.5": {
+        "second_moment": 2.6977096652885943e-08,
+        "input_variance": 3.3159055059684905e-09
+      },
+      "net.6": {
+        "second_moment": 1.2420908412398674e-09,
+        "input_variance": 1.395720142020732e-10
+      },
+      "net.7": {
+        "second_moment": 4.7102183350284556e-11,
+        "input_variance": 5.195025255710996e-12
+      },
+      "net.8": {
+        "second_moment": 1.2594494152018497e-12,
+        "input_variance": 1.508980313473085e-13
+      },
+      "net.9": {
+        "second_moment": 4.923558441320595e-14,
+        "input_variance": 5.7268298142456905e-15
+      },
+      "net.10": {
+        "second_moment": 1.3405610172301895e-15,
+        "input_variance": 1.6803342778012393e-16
+      },
+      "net.11": {
+        "second_moment": 4.3036942707849873e-17,
+        "input_variance": 5.5159796669241876e-18
+      },
+      "net.12": {
+        "second_moment": 1.6166212673484946e-18,
+        "input_variance": 1.9974896459760913e-19
+      },
+      "net.13": {
+        "second_moment": 5.722869656768566e-20,
+        "input_variance": 6.858049022724784e-21
+      },
+      "net.14": {
+        "second_moment": 1.9575751610415944e-21,
+        "input_variance": 2.4996614155002467e-22
+      },
+      "net.15": {
+        "second_moment": 7.107634022172099e-23,
+        "input_variance": 8.718738235898482e-24
+      },
+      "net.16": {
+        "second_moment": 1.930766118025786e-23,
+        "input_variance": 2.68947189971359e-24
+      }
+    },
+    "cifar10-sll-d15-zero-s2": {
+      "net.1": {
+        "second_moment": 0.010953728632583443,
+        "input_variance": 0.0020433625072133702
+      },
+      "net.2": {
+        "second_moment": 0.000374485958845894,
+        "input_variance": 6.824690708269002e-05
+      },
+      "net.3": {
+        "second_moment": 1.6885929518015582e-05,
+        "input_variance": 2.587519465011007e-06
+      },
+      "net.4": {
+        "second_moment": 6.148213061672955e-07,
+        "input_variance": 8.897504429279225e-08
+      },
+      "net.5": {
+        "second_moment": 2.5215601352083787e-08,
+        "input_variance": 3.4260230669119933e-09
+      },
+      "net.6": {
+        "second_moment": 9.350433181850903e-10,
+        "input_variance": 1.256560899999458e-10
+      },
+      "net.7": {
+        "second_moment": 2.999479439717384e-11,
+        "input_variance": 3.843012531243259e-12
+      },
+      "net.8": {
+        "second_moment": 1.0399059961898363e-12,
+        "input_variance": 1.3274703739212298e-13
+      },
+      "net.9": {
+        "second_moment": 4.3476437982783116e-14,
+        "input_variance": 5.08666955116429e-15
+      },
+      "net.10": {
+        "second_moment": 1.3440269621554161e-15,
+        "input_variance": 1.5664438938301386e-16
+      },
+      "net.11": {
+        "second_moment": 4.2770859393388775e-17,
+        "input_variance": 5.1483880666395434e-18
+      },
+      "net.12": {
+        "second_moment": 1.652579253411199e-18,
+        "input_variance": 1.7879758568379308e-19
+      },
+      "net.13": {
+        "second_moment": 4.874837474005611e-20,
+        "input_variance": 5.4703942417572305e-21
+      },
+      "net.14": {
+        "second_moment": 1.6720151441384527e-21,
+        "input_variance": 1.854768023929465e-22
+      },
+      "net.15": {
+        "second_moment": 5.866086806559535e-23,
+        "input_variance": 6.060466554285957e-24
+      },
+      "net.16": {
+        "second_moment": 3.446704895634457e-23,
+        "input_variance": 2.6894768268721746e-24
+      }
+    },
+    "cifar10-sll-d15-corrected-s0": {
+      "net.1": {
+        "second_moment": 0.5612943114186324,
+        "input_variance": 0.0020648128360466235
+      },
+      "net.2": {
+        "second_moment": 0.42889609218151503,
+        "input_variance": 7.486348220273625e-05
+      },
+      "net.3": {
+        "second_moment": 0.39551499725934924,
+        "input_variance": 2.230229739270422e-06
+      },
+      "net.4": {
+        "second_moment": 0.4670976203546858,
+        "input_variance": 8.596229305737197e-08
+      },
+      "net.5": {
+        "second_moment": 0.48177433863134433,
+        "input_variance": 2.9936658659521694e-09
+      },
+      "net.6": {
+        "second_moment": 0.5185056146672538,
+        "input_variance": 1.1798851104283606e-10
+      },
+      "net.7": {
+        "second_moment": 0.4387505685500168,
+        "input_variance": 4.321764583444176e-12
+      },
+      "net.8": {
+        "second_moment": 0.4175142725173463,
+        "input_variance": 1.2916104709069368e-13
+      },
+      "net.9": {
+        "second_moment": 0.5451529697461394,
+        "input_variance": 4.5051389432478104e-15
+      },
+      "net.10": {
+        "second_moment": 0.38776662825995994,
+        "input_variance": 1.6958167218844573e-16
+      },
+      "net.11": {
+        "second_moment": 0.5800591921350705,
+        "input_variance": 6.893494415351342e-18
+      },
+      "net.12": {
+        "second_moment": 0.5004942586075449,
+        "input_variance": 2.6423721888493666e-19
+      },
+      "net.13": {
+        "second_moment": 0.5352478036016768,
+        "input_variance": 9.271398296391523e-21
+      },
+      "net.14": {
+        "second_moment": 0.5727017933283964,
+        "input_variance": 3.3022312594117023e-22
+      },
+      "net.15": {
+        "second_moment": 0.49267572463442705,
+        "input_variance": 1.0211454263428207e-23
+      },
+      "net.16": {
+        "second_moment": 0.3706353651057908,
+        "input_variance": 3.4146696096234206e-24
+      }
+    },
+    "cifar10-sll-d15-corrected-s1": {
+      "net.1": {
+        "second_moment": 0.4236955202080489,
+        "input_variance": 0.002104761975318217
+      },
+      "net.2": {
+        "second_moment": 0.3974544166465863,
+        "input_variance": 6.724372896324516e-05
+      },
+      "net.3": {
+        "second_moment": 0.4687040795933768,
+        "input_variance": 2.6028282636603194e-06
+      },
+      "net.4": {
+        "second_moment": 0.514991699993431,
+        "input_variance": 9.542486156070166e-08
+      },
+      "net.5": {
+        "second_moment": 0.5310375200692433,
+        "input_variance": 3.915712551245117e-09
+      },
+      "net.6": {
+        "second_moment": 0.431147998952244,
+        "input_variance": 1.4204220029691466e-10
+      },
+      "net.7": {
+        "second_moment": 0.4413285093015789,
+        "input_variance": 5.253040985789605e-12
+      },
+      "net.8": {
+        "second_moment": 0.49726937049445913,
+        "input_variance": 2.1023531925411324e-13
+      },
+      "net.9": {
+        "second_moment": 0.38242530565035965,
+        "input_variance": 6.840245997930432e-15
+      },
+      "net.10": {
+        "second_moment": 0.5976127691969546,
+        "input_variance": 2.951064711954683e-16
+      },
+      "net.11": {
+        "second_moment": 0.5140871130165623,
+        "input_variance": 1.1100361226319647e-17
+      },
+      "net.12": {
+        "second_moment": 0.47801263664660576,
+        "input_variance": 4.277696887795004e-19
+      },
+      "net.13": {
+        "second_moment": 0.5611446219813386,
+        "input_variance": 1.550935086544071e-20
+      },
+      "net.14": {
+        "second_moment": 0.5183963067915003,
+        "input_variance": 5.530356669276859e-22
+      },
+      "net.15": {
+        "second_moment": 0.44821886924356946,
+        "input_variance": 2.0425493776569798e-23
+      },
+      "net.16": {
+        "second_moment": 1.1801571202667895,
+        "input_variance": 9.598478829647244e-24
+      }
+    },
+    "cifar10-sll-d15-corrected-s2": {
+      "net.1": {
+        "second_moment": 0.3915135667191368,
+        "input_variance": 0.002029605076550752
+      },
+      "net.2": {
+        "second_moment": 0.44746336471915815,
+        "input_variance": 6.893879582887458e-05
+      },
+      "net.3": {
+        "second_moment": 0.5027945517503054,
+        "input_variance": 2.533883074893749e-06
+      },
+      "net.4": {
+        "second_moment": 0.5416721702231365,
+        "input_variance": 1.0092890332628589e-07
+      },
+      "net.5": {
+        "second_moment": 0.4259311523677447,
+        "input_variance": 3.919678683597528e-09
+      },
+      "net.6": {
+        "second_moment": 0.4049158347964982,
+        "input_variance": 1.2857359858569808e-10
+      },
+      "net.7": {
+        "second_moment": 0.5236558524196749,
+        "input_variance": 4.54057322038505e-12
+      },
+      "net.8": {
+        "second_moment": 0.3958240550051062,
+        "input_variance": 1.7930969926030754e-13
+      },
+      "net.9": {
+        "second_moment": 0.5979505106209242,
+        "input_variance": 6.662294691730954e-15
+      },
+      "net.10": {
+        "second_moment": 0.45809922548674165,
+        "input_variance": 2.41548741481661e-16
+      },
+      "net.11": {
+        "second_moment": 0.5059038908926338,
+        "input_variance": 8.60227438341169e-18
+      },
+      "net.12": {
+        "second_moment": 0.538971768873086,
+        "input_variance": 3.3382539149985114e-19
+      },
+      "net.13": {
+        "second_moment": 0.5142842124558913,
+        "input_variance": 1.1794736062507554e-20
+      },
+      "net.14": {
+        "second_moment": 0.4535188064624472,
+        "input_variance": 4.1778477030957026e-22
+      },
+      "net.15": {
+        "second_moment": 0.5647510659297216,
+        "input_variance": 1.7168817798361086e-23
+      },
+      "net.16": {
+        "second_moment": 0.9139014582676318,
+        "input_variance": 7.114460409214296e-24
+      }
+    }
+  }
+}
