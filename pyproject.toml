@@ -1,0 +1,29 @@
+[project]
+name = "sll-initialization-review"
+version = "0.1.0"
+requires-python = ">=3.10,<3.11"
+dependencies = [
+    "autoattack",
+    "matplotlib==3.10.8",
+    "numpy==1.26.4",
+    "scikit-learn==1.6.1",
+    "scipy==1.15.3",
+    "tensorboard==2.20.0",
+    "torch==2.5.1+cu121",
+    "torchvision==0.20.1+cu121",
+]
+
+[tool.uv.sources]
+torch = { index = "pytorch" }
+torchvision = { index = "pytorch" }
+autoattack = { git = "https://github.com/fra31/auto-attack.git", rev = "a39220048b3c9f2cca9a4d3a54604793c68eca7e" }
+
+[[tool.uv.index]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cu121"
+explicit = true
+
+[dependency-groups]
+dev = [
+    "pytest==8.3.5",
+]

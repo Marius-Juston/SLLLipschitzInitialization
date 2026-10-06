@@ -1,0 +1,185 @@
+{
+  "seed": 813,
+  "results": [
+    {
+      "distribution": "gaussian",
+      "d": 1,
+      "n": 2,
+      "samples": 20000,
+      "estimate": 0.49993867808692166,
+      "se": 0.0018462396473599685,
+      "distribution_free_upper": 1.0,
+      "exact_quadrature": 0.5,
+      "mean_field": 0.6110154703516573,
+      "quadrature_order_check": 0.0
+    },
+    {
+      "distribution": "gaussian",
+      "d": 2,
+      "n": 4,
+      "samples": 20000,
+      "estimate": 0.17531792709095328,
+      "se": 0.0005576371358911853,
+      "distribution_free_upper": 0.5,
+      "exact_quadrature": 0.17532087466793067,
+      "mean_field": 0.2,
+      "quadrature_order_check": 0.0
+    },
+    {
+      "distribution": "gaussian",
+      "d": 8,
+      "n": 8,
+      "samples": 20000,
+      "estimate": 0.04203668897056899,
+      "se": 7.666855484126124e-05,
+      "distribution_free_upper": 0.125,
+      "exact_quadrature": 0.042104706140572504,
+      "mean_field": 0.042895442359249324,
+      "quadrature_order_check": 1.3119831610008958e-11
+    },
+    {
+      "distribution": "gaussian",
+      "d": 16,
+      "n": 4,
+      "samples": 20000,
+      "estimate": 0.0396772722012399,
+      "se": 4.864423113327202e-05,
+      "distribution_free_upper": 0.0625,
+      "exact_quadrature": 0.03963129418225597,
+      "mean_field": 0.039329402953546,
+      "quadrature_order_check": 5.551115123125783e-17
+    },
+    {
+      "distribution": "gaussian",
+      "d": 32,
+      "n": 32,
+      "samples": 20000,
+      "estimate": 0.005842495945690808,
+      "se": 6.304187931713284e-06,
+      "distribution_free_upper": 0.03125,
+      "exact_quadrature": 0.0058376117303258245,
+      "mean_field": 0.005853761290300771,
+      "quadrature_order_check": 1.734723475976807e-18
+    },
+    {
+      "distribution": "gaussian",
+      "d": 64,
+      "n": 16,
+      "samples": 20000,
+      "estimate": 0.006313419008406041,
+      "se": 5.743515263458786e-06,
+      "distribution_free_upper": 0.015625,
+      "exact_quadrature": 0.00631991084349616,
+      "mean_field": 0.00627459312665813,
+      "quadrature_order_check": 8.673617379884035e-19
+    },
+    {
+      "distribution": "laplace",
+      "d": 1,
+      "n": 2,
+      "samples": 20000,
+      "estimate": 0.5027093251509465,
+      "se": 0.0020363604432682174,
+      "distribution_free_upper": 1.0
+    },
+    {
+      "distribution": "laplace",
+      "d": 2,
+      "n": 4,
+      "samples": 20000,
+      "estimate": 0.17363920068091335,
+      "se": 0.000666059784768196,
+      "distribution_free_upper": 0.5
+    },
+    {
+      "distribution": "laplace",
+      "d": 8,
+      "n": 8,
+      "samples": 20000,
+      "estimate": 0.04199138244424318,
+      "se": 9.49383311331632e-05,
+      "distribution_free_upper": 0.125
+    },
+    {
+      "distribution": "laplace",
+      "d": 16,
+      "n": 4,
+      "samples": 20000,
+      "estimate": 0.039576301879609935,
+      "se": 5.457349000750793e-05,
+      "distribution_free_upper": 0.0625
+    },
+    {
+      "distribution": "laplace",
+      "d": 32,
+      "n": 32,
+      "samples": 20000,
+      "estimate": 0.005855079008436288,
+      "se": 8.153792129164301e-06,
+      "distribution_free_upper": 0.03125
+    },
+    {
+      "distribution": "laplace",
+      "d": 64,
+      "n": 16,
+      "samples": 20000,
+      "estimate": 0.0063331881897558135,
+      "se": 6.477410768466284e-06,
+      "distribution_free_upper": 0.015625
+    },
+    {
+      "distribution": "uniform",
+      "d": 1,
+      "n": 2,
+      "samples": 20000,
+      "estimate": 0.5006204274435087,
+      "se": 0.001680468895642195,
+      "distribution_free_upper": 1.0
+    },
+    {
+      "distribution": "uniform",
+      "d": 2,
+      "n": 4,
+      "samples": 20000,
+      "estimate": 0.17732578831402615,
+      "se": 0.0004795123679479416,
+      "distribution_free_upper": 0.5
+    },
+    {
+      "distribution": "uniform",
+      "d": 8,
+      "n": 8,
+      "samples": 20000,
+      "estimate": 0.042569370649292386,
+      "se": 6.717021535997272e-05,
+      "distribution_free_upper": 0.125
+    },
+    {
+      "distribution": "uniform",
+      "d": 16,
+      "n": 4,
+      "samples": 20000,
+      "estimate": 0.039805693644824655,
+      "se": 4.642403628568427e-05,
+      "distribution_free_upper": 0.0625
+    },
+    {
+      "distribution": "uniform",
+      "d": 32,
+      "n": 32,
+      "samples": 20000,
+      "estimate": 0.005857516512679105,
+      "se": 5.396212472497206e-06,
+      "distribution_free_upper": 0.03125
+    },
+    {
+      "distribution": "uniform",
+      "d": 64,
+      "n": 16,
+      "samples": 20000,
+      "estimate": 0.006336711044319894,
+      "se": 5.506280022914894e-06,
+      "distribution_free_upper": 0.015625
+    }
+  ]
+}

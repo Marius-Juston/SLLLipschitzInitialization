@@ -1,6 +1,9 @@
 # SLL Lipschitz Initialization
 
-## 
+## Reviewer revision
+
+Use the uv-managed pipeline documented in [REVISION.md](REVISION.md) for the corrected analysis and experiments. The historical scripts below are retained for provenance.
+
 
 This repository is the code for the paper [1-Lipschitz Network Initialization for Certifiably Robust Classification Applications: A Decay Problem](https://arxiv.org/abs/2503.00240).
 

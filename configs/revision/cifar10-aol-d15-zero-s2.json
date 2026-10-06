@@ -1,0 +1,12 @@
+{
+  "dataset": "cifar10",
+  "model": "aol",
+  "depth": 15,
+  "width": 256,
+  "bias": "zero",
+  "seed": 2,
+  "epochs": 100,
+  "batch": 128,
+  "lr": 0.001,
+  "workers": 4
+}

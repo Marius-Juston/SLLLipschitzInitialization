@@ -1,0 +1,18 @@
+{
+  "config": {
+    "dataset": "covertype",
+    "model": "sll",
+    "depth": 15,
+    "width": 64,
+    "bias": "zero",
+    "seed": 0,
+    "epochs": 25,
+    "batch": 64,
+    "lr": 0.001,
+    "workers": 0
+  },
+  "step_seconds": 0.012326899915933609,
+  "projected_training_hours": 0.5595898941004028,
+  "peak_gpu_bytes": 20174336,
+  "elapsed_seconds": 0.5978577565401793
+}

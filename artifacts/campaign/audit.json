@@ -1,0 +1,31 @@
+{
+  "runs": 132,
+  "checks_passed": true,
+  "checks": [
+    "manifest/config match",
+    "complete contiguous histories",
+    "first best validation checkpoint",
+    "finite losses",
+    "original source hashes against recorded Git commit",
+    "full-test margin/certificate counts",
+    "same-subset certificate <= attack accuracy <= clean accuracy",
+    "certificate monotonicity",
+    "metric denominators",
+    "AutoAttack perturbation logs"
+  ],
+  "source_commits": [
+    "52d2f2d45370e3a8931bb25425ba01aa12517545",
+    "551d1c1224e28f1a77ec9838d72c6a1c652d2d03"
+  ],
+  "source_difference": "52d2f2d to 551d1c1 adds only a paused-status write in the optional stop_after path; training/evaluation arithmetic unchanged.",
+  "resumed_runs": [
+    "cifar10-residual-d20-default-s0",
+    "covertype-sll-d30-zero-s0"
+  ],
+  "limitations": [
+    "Aggregate checks do not prove per-example attack/certificate consistency.",
+    "Original PGD adversarial tensors were not retained; projector requires separate replay check.",
+    "Early pilot provenance lacks source hashes; resumed runs retain available provenance history."
+  ],
+  "training_gpu_hours": 140.30583983884918
+}

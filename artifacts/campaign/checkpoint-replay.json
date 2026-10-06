@@ -1,0 +1,2998 @@
+{
+  "complete": true,
+  "checked": 132,
+  "total": 132,
+  "attack_check_examples": 8,
+  "attack_check_steps": 100,
+  "attack_check_restarts": 5,
+  "runs": {
+    "cifar10-residual-d20-default-s0": {
+      "checkpoint_epoch": 580,
+      "parameters": 41385862,
+      "trainable_parameters": 41385862,
+      "clean_accuracy": 0.7105,
+      "prediction_counts": [
+        1023,
+        1073,
+        870,
+        772,
+        867,
+        1166,
+        1058,
+        1044,
+        1066,
+        1061
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.2500000596046448,
+          "certified_count": 7,
+          "robust_count": 7
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.5000000596046448,
+          "certified_count": 6,
+          "robust_count": 7
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 1.0000001192092896,
+          "certified_count": 3,
+          "robust_count": 7
+        }
+      }
+    },
+    "cifar10-residual-d20-default-s1": {
+      "checkpoint_epoch": 735,
+      "parameters": 41385862,
+      "trainable_parameters": 41385862,
+      "clean_accuracy": 0.7148,
+      "prediction_counts": [
+        982,
+        1053,
+        826,
+        732,
+        875,
+        1107,
+        1207,
+        1014,
+        1128,
+        1076
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.2500000596046448,
+          "certified_count": 7,
+          "robust_count": 7
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.5000000596046448,
+          "certified_count": 6,
+          "robust_count": 7
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 1.0000001192092896,
+          "certified_count": 3,
+          "robust_count": 7
+        }
+      }
+    },
+    "cifar10-residual-d20-default-s2": {
+      "checkpoint_epoch": 624,
+      "parameters": 41385862,
+      "trainable_parameters": 41385862,
+      "clean_accuracy": 0.709,
+      "prediction_counts": [
+        980,
+        1056,
+        691,
+        767,
+        927,
+        1116,
+        1180,
+        1100,
+        1133,
+        1050
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.2500000596046448,
+          "certified_count": 7,
+          "robust_count": 7
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.5000000596046448,
+          "certified_count": 6,
+          "robust_count": 7
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 1.0000001192092896,
+          "certified_count": 2,
+          "robust_count": 6
+        }
+      }
+    },
+    "cifar10-residual-d20-corrected-s0": {
+      "checkpoint_epoch": 881,
+      "parameters": 41385862,
+      "trainable_parameters": 41385862,
+      "clean_accuracy": 0.7069,
+      "prediction_counts": [
+        1025,
+        1073,
+        786,
+        748,
+        830,
+        1016,
+        1351,
+        1055,
+        1110,
+        1006
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.2500000596046448,
+          "certified_count": 7,
+          "robust_count": 7
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.5000000596046448,
+          "certified_count": 5,
+          "robust_count": 7
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 1.0000001192092896,
+          "certified_count": 3,
+          "robust_count": 5
+        }
+      }
+    },
+    "cifar10-residual-d20-corrected-s1": {
+      "checkpoint_epoch": 798,
+      "parameters": 41385862,
+      "trainable_parameters": 41385862,
+      "clean_accuracy": 0.7089,
+      "prediction_counts": [
+        977,
+        1054,
+        846,
+        764,
+        838,
+        963,
+        1306,
+        1038,
+        1181,
+        1033
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.2500000596046448,
+          "certified_count": 7,
+          "robust_count": 7
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.5000000596046448,
+          "certified_count": 6,
+          "robust_count": 7
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 1.0000001192092896,
+          "certified_count": 2,
+          "robust_count": 6
+        }
+      }
+    },
+    "cifar10-residual-d20-corrected-s2": {
+      "checkpoint_epoch": 686,
+      "parameters": 41385862,
+      "trainable_parameters": 41385862,
+      "clean_accuracy": 0.7053,
+      "prediction_counts": [
+        1025,
+        1034,
+        887,
+        772,
+        769,
+        982,
+        1229,
+        1063,
+        1155,
+        1084
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.2500000298023224,
+          "certified_count": 7,
+          "robust_count": 7
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.5000000596046448,
+          "certified_count": 5,
+          "robust_count": 7
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 1.0000001192092896,
+          "certified_count": 3,
+          "robust_count": 5
+        }
+      }
+    },
+    "cifar10-aol-d5-zero-s0": {
+      "checkpoint_epoch": 100,
+      "parameters": 1056778,
+      "trainable_parameters": 1052426,
+      "clean_accuracy": 0.4452,
+      "prediction_counts": [
+        1101,
+        977,
+        1124,
+        467,
+        489,
+        994,
+        1358,
+        1026,
+        1097,
+        1367
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.2500000596046448,
+          "certified_count": 1,
+          "robust_count": 3
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.5000000596046448,
+          "certified_count": 1,
+          "robust_count": 1
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 1.0000001192092896,
+          "certified_count": 1,
+          "robust_count": 1
+        }
+      }
+    },
+    "cifar10-aol-d5-zero-s1": {
+      "checkpoint_epoch": 97,
+      "parameters": 1056778,
+      "trainable_parameters": 1052426,
+      "clean_accuracy": 0.444,
+      "prediction_counts": [
+        976,
+        957,
+        892,
+        564,
+        1088,
+        604,
+        1378,
+        1315,
+        1130,
+        1096
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.2500000596046448,
+          "certified_count": 2,
+          "robust_count": 2
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.5000000596046448,
+          "certified_count": 1,
+          "robust_count": 2
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 1.0000001192092896,
+          "certified_count": 1,
+          "robust_count": 2
+        }
+      }
+    },
+    "cifar10-aol-d5-zero-s2": {
+      "checkpoint_epoch": 100,
+      "parameters": 1056778,
+      "trainable_parameters": 1052426,
+      "clean_accuracy": 0.4398,
+      "prediction_counts": [
+        817,
+        1010,
+        389,
+        912,
+        1137,
+        684,
+        1150,
+        1188,
+        1598,
+        1115
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.2500000596046448,
+          "certified_count": 2,
+          "robust_count": 2
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.5000000596046448,
+          "certified_count": 1,
+          "robust_count": 2
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 1.0000001192092896,
+          "certified_count": 1,
+          "robust_count": 2
+        }
+      }
+    },
+    "cifar10-aol-d5-corrected-s0": {
+      "checkpoint_epoch": 88,
+      "parameters": 1056778,
+      "trainable_parameters": 1052426,
+      "clean_accuracy": 0.4338,
+      "prediction_counts": [
+        836,
+        1195,
+        1091,
+        895,
+        584,
+        1069,
+        1044,
+        1218,
+        1337,
+        731
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.2500000596046448,
+          "certified_count": 1,
+          "robust_count": 1
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.5000000596046448,
+          "certified_count": 1,
+          "robust_count": 1
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 1.0000001192092896,
+          "certified_count": 1,
+          "robust_count": 1
+        }
+      }
+    },
+    "cifar10-aol-d5-corrected-s1": {
+      "checkpoint_epoch": 100,
+      "parameters": 1056778,
+      "trainable_parameters": 1052426,
+      "clean_accuracy": 0.4392,
+      "prediction_counts": [
+        1052,
+        1062,
+        359,
+        609,
+        695,
+        946,
+        1609,
+        1452,
+        1285,
+        931
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.2500000596046448,
+          "certified_count": 1,
+          "robust_count": 1
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.5000000596046448,
+          "certified_count": 1,
+          "robust_count": 1
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 1.0000001192092896,
+          "certified_count": 1,
+          "robust_count": 1
+        }
+      }
+    },
+    "cifar10-aol-d5-corrected-s2": {
+      "checkpoint_epoch": 94,
+      "parameters": 1056778,
+      "trainable_parameters": 1052426,
+      "clean_accuracy": 0.4364,
+      "prediction_counts": [
+        842,
+        1062,
+        893,
+        811,
+        960,
+        1106,
+        898,
+        711,
+        1163,
+        1554
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.2500000596046448,
+          "certified_count": 2,
+          "robust_count": 3
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.5000000596046448,
+          "certified_count": 1,
+          "robust_count": 2
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 1.0000001192092896,
+          "certified_count": 1,
+          "robust_count": 1
+        }
+      }
+    },
+    "cifar10-aol-d15-zero-s0": {
+      "checkpoint_epoch": 32,
+      "parameters": 1717258,
+      "trainable_parameters": 1710346,
+      "clean_accuracy": 0.1,
+      "prediction_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        10000,
+        0,
+        0,
+        0
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.24306030571460724,
+          "certified_count": 0,
+          "robust_count": 1
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.4945371150970459,
+          "certified_count": 0,
+          "robust_count": 1
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 0.9762163162231445,
+          "certified_count": 0,
+          "robust_count": 1
+        }
+      }
+    },
+    "cifar10-aol-d15-zero-s1": {
+      "checkpoint_epoch": 6,
+      "parameters": 1717258,
+      "trainable_parameters": 1710346,
+      "clean_accuracy": 0.1,
+      "prediction_counts": [
+        0,
+        0,
+        0,
+        0,
+        10000,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.22641491889953613,
+          "certified_count": 0,
+          "robust_count": 1
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.4967411458492279,
+          "certified_count": 0,
+          "robust_count": 1
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 0.9501169323921204,
+          "certified_count": 0,
+          "robust_count": 1
+        }
+      }
+    },
+    "cifar10-aol-d15-zero-s2": {
+      "checkpoint_epoch": 13,
+      "parameters": 1717258,
+      "trainable_parameters": 1710346,
+      "clean_accuracy": 0.1,
+      "prediction_counts": [
+        0,
+        0,
+        10000,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.24453359842300415,
+          "certified_count": 0,
+          "robust_count": 0
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.4943104386329651,
+          "certified_count": 0,
+          "robust_count": 0
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 0.971601128578186,
+          "certified_count": 0,
+          "robust_count": 0
+        }
+      }
+    },
+    "cifar10-aol-d15-corrected-s0": {
+      "checkpoint_epoch": 19,
+      "parameters": 1717258,
+      "trainable_parameters": 1710346,
+      "clean_accuracy": 0.1,
+      "prediction_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        10000,
+        0,
+        0
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.2500000596046448,
+          "certified_count": 0,
+          "robust_count": 0
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.5000000596046448,
+          "certified_count": 0,
+          "robust_count": 0
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 1.0000001192092896,
+          "certified_count": 0,
+          "robust_count": 0
+        }
+      }
+    },
+    "cifar10-aol-d15-corrected-s1": {
+      "checkpoint_epoch": 10,
+      "parameters": 1717258,
+      "trainable_parameters": 1710346,
+      "clean_accuracy": 0.1,
+      "prediction_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        10000,
+        0,
+        0
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.2500000596046448,
+          "certified_count": 0,
+          "robust_count": 0
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.5000000596046448,
+          "certified_count": 0,
+          "robust_count": 0
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 1.0000001192092896,
+          "certified_count": 0,
+          "robust_count": 0
+        }
+      }
+    },
+    "cifar10-aol-d15-corrected-s2": {
+      "checkpoint_epoch": 26,
+      "parameters": 1717258,
+      "trainable_parameters": 1710346,
+      "clean_accuracy": 0.1,
+      "prediction_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        10000,
+        0,
+        0
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.2500000596046448,
+          "certified_count": 0,
+          "robust_count": 0
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.5000000596046448,
+          "certified_count": 0,
+          "robust_count": 0
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 1.0000001192092896,
+          "certified_count": 0,
+          "robust_count": 0
+        }
+      }
+    },
+    "cifar10-aol-d30-zero-s0": {
+      "checkpoint_epoch": 32,
+      "parameters": 2707978,
+      "trainable_parameters": 2697226,
+      "clean_accuracy": 0.1,
+      "prediction_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        10000,
+        0,
+        0,
+        0
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.24306030571460724,
+          "certified_count": 0,
+          "robust_count": 1
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.4945371150970459,
+          "certified_count": 0,
+          "robust_count": 1
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 0.9762163162231445,
+          "certified_count": 0,
+          "robust_count": 1
+        }
+      }
+    },
+    "cifar10-aol-d30-zero-s1": {
+      "checkpoint_epoch": 6,
+      "parameters": 2707978,
+      "trainable_parameters": 2697226,
+      "clean_accuracy": 0.1,
+      "prediction_counts": [
+        0,
+        0,
+        0,
+        0,
+        10000,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.22641491889953613,
+          "certified_count": 0,
+          "robust_count": 1
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.4967411458492279,
+          "certified_count": 0,
+          "robust_count": 1
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 0.9501169323921204,
+          "certified_count": 0,
+          "robust_count": 1
+        }
+      }
+    },
+    "cifar10-aol-d30-zero-s2": {
+      "checkpoint_epoch": 13,
+      "parameters": 2707978,
+      "trainable_parameters": 2697226,
+      "clean_accuracy": 0.1,
+      "prediction_counts": [
+        0,
+        0,
+        10000,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.24453359842300415,
+          "certified_count": 0,
+          "robust_count": 0
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.4943104386329651,
+          "certified_count": 0,
+          "robust_count": 0
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 0.971601128578186,
+          "certified_count": 0,
+          "robust_count": 0
+        }
+      }
+    },
+    "cifar10-aol-d30-corrected-s0": {
+      "checkpoint_epoch": 19,
+      "parameters": 2707978,
+      "trainable_parameters": 2697226,
+      "clean_accuracy": 0.1,
+      "prediction_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        10000,
+        0,
+        0
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.2500000298023224,
+          "certified_count": 0,
+          "robust_count": 0
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.5000000596046448,
+          "certified_count": 0,
+          "robust_count": 0
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 1.0000001192092896,
+          "certified_count": 0,
+          "robust_count": 0
+        }
+      }
+    },
+    "cifar10-aol-d30-corrected-s1": {
+      "checkpoint_epoch": 4,
+      "parameters": 2707978,
+      "trainable_parameters": 2697226,
+      "clean_accuracy": 0.1,
+      "prediction_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        10000,
+        0,
+        0
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.25,
+          "certified_count": 0,
+          "robust_count": 0
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.5000000596046448,
+          "certified_count": 0,
+          "robust_count": 0
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 1.0000001192092896,
+          "certified_count": 0,
+          "robust_count": 0
+        }
+      }
+    },
+    "cifar10-aol-d30-corrected-s2": {
+      "checkpoint_epoch": 26,
+      "parameters": 2707978,
+      "trainable_parameters": 2697226,
+      "clean_accuracy": 0.1,
+      "prediction_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        10000,
+        0,
+        0
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.2500000298023224,
+          "certified_count": 0,
+          "robust_count": 0
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.5000000596046448,
+          "certified_count": 0,
+          "robust_count": 0
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 1.0000001192092896,
+          "certified_count": 0,
+          "robust_count": 0
+        }
+      }
+    },
+    "cifar10-sll-d5-zero-s0": {
+      "checkpoint_epoch": 96,
+      "parameters": 1056778,
+      "trainable_parameters": 1056778,
+      "clean_accuracy": 0.4388,
+      "prediction_counts": [
+        764,
+        1031,
+        1094,
+        559,
+        967,
+        1109,
+        1268,
+        655,
+        1327,
+        1226
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.2500000596046448,
+          "certified_count": 2,
+          "robust_count": 2
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.5000000596046448,
+          "certified_count": 1,
+          "robust_count": 2
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 1.0000001192092896,
+          "certified_count": 1,
+          "robust_count": 2
+        }
+      }
+    },
+    "cifar10-sll-d5-zero-s1": {
+      "checkpoint_epoch": 97,
+      "parameters": 1056778,
+      "trainable_parameters": 1056778,
+      "clean_accuracy": 0.4439,
+      "prediction_counts": [
+        935,
+        1007,
+        849,
+        522,
+        1223,
+        558,
+        1298,
+        1401,
+        1210,
+        997
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.2500000596046448,
+          "certified_count": 2,
+          "robust_count": 3
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.5000000596046448,
+          "certified_count": 1,
+          "robust_count": 2
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 1.0000001192092896,
+          "certified_count": 1,
+          "robust_count": 1
+        }
+      }
+    },
+    "cifar10-sll-d5-zero-s2": {
+      "checkpoint_epoch": 100,
+      "parameters": 1056778,
+      "trainable_parameters": 1056778,
+      "clean_accuracy": 0.4423,
+      "prediction_counts": [
+        848,
+        1085,
+        496,
+        978,
+        1084,
+        747,
+        1019,
+        1280,
+        1508,
+        955
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.2500000596046448,
+          "certified_count": 1,
+          "robust_count": 2
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.5000001192092896,
+          "certified_count": 1,
+          "robust_count": 2
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 1.0000001192092896,
+          "certified_count": 1,
+          "robust_count": 1
+        }
+      }
+    },
+    "cifar10-sll-d5-corrected-s0": {
+      "checkpoint_epoch": 88,
+      "parameters": 1056778,
+      "trainable_parameters": 1056778,
+      "clean_accuracy": 0.4429,
+      "prediction_counts": [
+        965,
+        1134,
+        903,
+        835,
+        709,
+        1067,
+        1188,
+        1149,
+        1258,
+        792
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.2500000596046448,
+          "certified_count": 1,
+          "robust_count": 1
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.5000000596046448,
+          "certified_count": 1,
+          "robust_count": 1
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 1.0000001192092896,
+          "certified_count": 1,
+          "robust_count": 1
+        }
+      }
+    },
+    "cifar10-sll-d5-corrected-s1": {
+      "checkpoint_epoch": 100,
+      "parameters": 1056778,
+      "trainable_parameters": 1056778,
+      "clean_accuracy": 0.4401,
+      "prediction_counts": [
+        1016,
+        1172,
+        311,
+        770,
+        746,
+        831,
+        1589,
+        1475,
+        1194,
+        896
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.2500000596046448,
+          "certified_count": 1,
+          "robust_count": 1
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.5000000596046448,
+          "certified_count": 1,
+          "robust_count": 1
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 1.0000001192092896,
+          "certified_count": 1,
+          "robust_count": 1
+        }
+      }
+    },
+    "cifar10-sll-d5-corrected-s2": {
+      "checkpoint_epoch": 92,
+      "parameters": 1056778,
+      "trainable_parameters": 1056778,
+      "clean_accuracy": 0.4355,
+      "prediction_counts": [
+        953,
+        1155,
+        1186,
+        383,
+        592,
+        866,
+        1124,
+        1150,
+        1169,
+        1422
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.2500000596046448,
+          "certified_count": 1,
+          "robust_count": 1
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.5000000596046448,
+          "certified_count": 1,
+          "robust_count": 1
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 1.0000001192092896,
+          "certified_count": 1,
+          "robust_count": 1
+        }
+      }
+    },
+    "cifar10-sll-d15-zero-s0": {
+      "checkpoint_epoch": 32,
+      "parameters": 1717258,
+      "trainable_parameters": 1717258,
+      "clean_accuracy": 0.1,
+      "prediction_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        10000,
+        0,
+        0,
+        0
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.24306030571460724,
+          "certified_count": 0,
+          "robust_count": 1
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.4945371150970459,
+          "certified_count": 0,
+          "robust_count": 1
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 0.9762163162231445,
+          "certified_count": 0,
+          "robust_count": 1
+        }
+      }
+    },
+    "cifar10-sll-d15-zero-s1": {
+      "checkpoint_epoch": 6,
+      "parameters": 1717258,
+      "trainable_parameters": 1717258,
+      "clean_accuracy": 0.1,
+      "prediction_counts": [
+        0,
+        0,
+        0,
+        0,
+        10000,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.22641491889953613,
+          "certified_count": 0,
+          "robust_count": 1
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.4967411458492279,
+          "certified_count": 0,
+          "robust_count": 1
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 0.9501169323921204,
+          "certified_count": 0,
+          "robust_count": 1
+        }
+      }
+    },
+    "cifar10-sll-d15-zero-s2": {
+      "checkpoint_epoch": 13,
+      "parameters": 1717258,
+      "trainable_parameters": 1717258,
+      "clean_accuracy": 0.1,
+      "prediction_counts": [
+        0,
+        0,
+        10000,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.24453359842300415,
+          "certified_count": 0,
+          "robust_count": 0
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.4943104386329651,
+          "certified_count": 0,
+          "robust_count": 0
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 0.971601128578186,
+          "certified_count": 0,
+          "robust_count": 0
+        }
+      }
+    },
+    "cifar10-sll-d15-corrected-s0": {
+      "checkpoint_epoch": 19,
+      "parameters": 1717258,
+      "trainable_parameters": 1717258,
+      "clean_accuracy": 0.1,
+      "prediction_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        10000,
+        0,
+        0
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.2500000298023224,
+          "certified_count": 0,
+          "robust_count": 0
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.5000000596046448,
+          "certified_count": 0,
+          "robust_count": 0
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 1.0000001192092896,
+          "certified_count": 0,
+          "robust_count": 0
+        }
+      }
+    },
+    "cifar10-sll-d15-corrected-s1": {
+      "checkpoint_epoch": 10,
+      "parameters": 1717258,
+      "trainable_parameters": 1717258,
+      "clean_accuracy": 0.1,
+      "prediction_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        10000,
+        0,
+        0
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.2500000596046448,
+          "certified_count": 0,
+          "robust_count": 0
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.5000000596046448,
+          "certified_count": 0,
+          "robust_count": 0
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 1.0000001192092896,
+          "certified_count": 0,
+          "robust_count": 0
+        }
+      }
+    },
+    "cifar10-sll-d15-corrected-s2": {
+      "checkpoint_epoch": 26,
+      "parameters": 1717258,
+      "trainable_parameters": 1717258,
+      "clean_accuracy": 0.1,
+      "prediction_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        10000,
+        0,
+        0
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.2500000298023224,
+          "certified_count": 0,
+          "robust_count": 0
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.5000000596046448,
+          "certified_count": 0,
+          "robust_count": 0
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 1.0000001192092896,
+          "certified_count": 0,
+          "robust_count": 0
+        }
+      }
+    },
+    "cifar10-sll-d30-zero-s0": {
+      "checkpoint_epoch": 32,
+      "parameters": 2707978,
+      "trainable_parameters": 2707978,
+      "clean_accuracy": 0.1,
+      "prediction_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        10000,
+        0,
+        0,
+        0
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.24306030571460724,
+          "certified_count": 0,
+          "robust_count": 1
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.4945371150970459,
+          "certified_count": 0,
+          "robust_count": 1
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 0.9762163162231445,
+          "certified_count": 0,
+          "robust_count": 1
+        }
+      }
+    },
+    "cifar10-sll-d30-zero-s1": {
+      "checkpoint_epoch": 6,
+      "parameters": 2707978,
+      "trainable_parameters": 2707978,
+      "clean_accuracy": 0.1,
+      "prediction_counts": [
+        0,
+        0,
+        0,
+        0,
+        10000,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.2500000298023224,
+          "certified_count": 0,
+          "robust_count": 1
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.5000000596046448,
+          "certified_count": 0,
+          "robust_count": 1
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 1.0000001192092896,
+          "certified_count": 0,
+          "robust_count": 1
+        }
+      }
+    },
+    "cifar10-sll-d30-zero-s2": {
+      "checkpoint_epoch": 13,
+      "parameters": 2707978,
+      "trainable_parameters": 2707978,
+      "clean_accuracy": 0.1,
+      "prediction_counts": [
+        0,
+        0,
+        10000,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.24453359842300415,
+          "certified_count": 0,
+          "robust_count": 0
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.4943104386329651,
+          "certified_count": 0,
+          "robust_count": 0
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 0.971601128578186,
+          "certified_count": 0,
+          "robust_count": 0
+        }
+      }
+    },
+    "cifar10-sll-d30-corrected-s0": {
+      "checkpoint_epoch": 19,
+      "parameters": 2707978,
+      "trainable_parameters": 2707978,
+      "clean_accuracy": 0.1,
+      "prediction_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        10000,
+        0,
+        0
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.2500000298023224,
+          "certified_count": 0,
+          "robust_count": 0
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.5000000596046448,
+          "certified_count": 0,
+          "robust_count": 0
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 1.0,
+          "certified_count": 0,
+          "robust_count": 0
+        }
+      }
+    },
+    "cifar10-sll-d30-corrected-s1": {
+      "checkpoint_epoch": 4,
+      "parameters": 2707978,
+      "trainable_parameters": 2707978,
+      "clean_accuracy": 0.1,
+      "prediction_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        10000,
+        0,
+        0
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.2500000298023224,
+          "certified_count": 0,
+          "robust_count": 0
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.5,
+          "certified_count": 0,
+          "robust_count": 0
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 1.0000001192092896,
+          "certified_count": 0,
+          "robust_count": 0
+        }
+      }
+    },
+    "cifar10-sll-d30-corrected-s2": {
+      "checkpoint_epoch": 26,
+      "parameters": 2707978,
+      "trainable_parameters": 2707978,
+      "clean_accuracy": 0.1,
+      "prediction_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        10000,
+        0,
+        0
+      ],
+      "max_certificate_replay_error": 0.0,
+      "pgd_geometry_replay": {
+        "0.25": {
+          "calls": 506,
+          "max_norm": 0.2500000298023224,
+          "certified_count": 0,
+          "robust_count": 0
+        },
+        "0.5": {
+          "calls": 506,
+          "max_norm": 0.5,
+          "certified_count": 0,
+          "robust_count": 0
+        },
+        "1.0": {
+          "calls": 506,
+          "max_norm": 1.0000001192092896,
+          "certified_count": 0,
+          "robust_count": 0
+        }
+      }
+    },
+    "covertype-sll-d5-zero-s0": {
+      "checkpoint_epoch": 25,
+      "parameters": 20989,
+      "trainable_parameters": 20989,
+      "clean_accuracy": 0.7317367021505469,
+      "prediction_counts": [
+        44899,
+        57765,
+        9453,
+        105,
+        61,
+        871,
+        3049
+      ]
+    },
+    "covertype-sll-d5-zero-s1": {
+      "checkpoint_epoch": 23,
+      "parameters": 20989,
+      "trainable_parameters": 20989,
+      "clean_accuracy": 0.7311945474729568,
+      "prediction_counts": [
+        39511,
+        63131,
+        9764,
+        334,
+        101,
+        302,
+        3060
+      ]
+    },
+    "covertype-sll-d5-zero-s2": {
+      "checkpoint_epoch": 25,
+      "parameters": 20989,
+      "trainable_parameters": 20989,
+      "clean_accuracy": 0.73128920940079,
+      "prediction_counts": [
+        38075,
+        64329,
+        10188,
+        64,
+        14,
+        133,
+        3400
+      ]
+    },
+    "covertype-sll-d5-zero-s3": {
+      "checkpoint_epoch": 16,
+      "parameters": 20989,
+      "trainable_parameters": 20989,
+      "clean_accuracy": 0.7333717718131202,
+      "prediction_counts": [
+        40319,
+        62492,
+        9523,
+        137,
+        3,
+        733,
+        2996
+      ]
+    },
+    "covertype-sll-d5-zero-s4": {
+      "checkpoint_epoch": 22,
+      "parameters": 20989,
+      "trainable_parameters": 20989,
+      "clean_accuracy": 0.733802053303271,
+      "prediction_counts": [
+        40303,
+        61676,
+        10053,
+        113,
+        83,
+        776,
+        3199
+      ]
+    },
+    "covertype-sll-d5-zero-s5": {
+      "checkpoint_epoch": 15,
+      "parameters": 20989,
+      "trainable_parameters": 20989,
+      "clean_accuracy": 0.7312375756219719,
+      "prediction_counts": [
+        44438,
+        58128,
+        9903,
+        165,
+        46,
+        522,
+        3001
+      ]
+    },
+    "covertype-sll-d5-zero-s6": {
+      "checkpoint_epoch": 21,
+      "parameters": 20989,
+      "trainable_parameters": 20989,
+      "clean_accuracy": 0.7330017297315904,
+      "prediction_counts": [
+        39425,
+        62740,
+        9619,
+        297,
+        58,
+        985,
+        3079
+      ]
+    },
+    "covertype-sll-d5-zero-s7": {
+      "checkpoint_epoch": 25,
+      "parameters": 20989,
+      "trainable_parameters": 20989,
+      "clean_accuracy": 0.7314010825882292,
+      "prediction_counts": [
+        43002,
+        59458,
+        10033,
+        200,
+        25,
+        619,
+        2866
+      ]
+    },
+    "covertype-sll-d5-zero-s8": {
+      "checkpoint_epoch": 24,
+      "parameters": 20989,
+      "trainable_parameters": 20989,
+      "clean_accuracy": 0.7341462784953917,
+      "prediction_counts": [
+        39704,
+        62868,
+        8450,
+        324,
+        132,
+        1662,
+        3063
+      ]
+    },
+    "covertype-sll-d5-zero-s9": {
+      "checkpoint_epoch": 21,
+      "parameters": 20989,
+      "trainable_parameters": 20989,
+      "clean_accuracy": 0.733311532404499,
+      "prediction_counts": [
+        42014,
+        60120,
+        9101,
+        132,
+        85,
+        1481,
+        3270
+      ]
+    },
+    "covertype-sll-d5-default-s0": {
+      "checkpoint_epoch": 10,
+      "parameters": 20989,
+      "trainable_parameters": 20989,
+      "clean_accuracy": 0.7310826742855175,
+      "prediction_counts": [
+        44745,
+        57422,
+        9194,
+        196,
+        128,
+        1581,
+        2937
+      ]
+    },
+    "covertype-sll-d5-default-s1": {
+      "checkpoint_epoch": 23,
+      "parameters": 20989,
+      "trainable_parameters": 20989,
+      "clean_accuracy": 0.7295422665507775,
+      "prediction_counts": [
+        39331,
+        63215,
+        9603,
+        364,
+        138,
+        439,
+        3113
+      ]
+    },
+    "covertype-sll-d5-default-s2": {
+      "checkpoint_epoch": 22,
+      "parameters": 20989,
+      "trainable_parameters": 20989,
+      "clean_accuracy": 0.7310482517663055,
+      "prediction_counts": [
+        40349,
+        63184,
+        9336,
+        132,
+        1,
+        628,
+        2573
+      ]
+    },
+    "covertype-sll-d5-default-s3": {
+      "checkpoint_epoch": 16,
+      "parameters": 20989,
+      "trainable_parameters": 20989,
+      "clean_accuracy": 0.7349121795478603,
+      "prediction_counts": [
+        40707,
+        62204,
+        9598,
+        122,
+        0,
+        605,
+        2967
+      ]
+    },
+    "covertype-sll-d5-default-s4": {
+      "checkpoint_epoch": 22,
+      "parameters": 20989,
+      "trainable_parameters": 20989,
+      "clean_accuracy": 0.7347400669517998,
+      "prediction_counts": [
+        40892,
+        61156,
+        10015,
+        87,
+        103,
+        802,
+        3148
+      ]
+    },
+    "covertype-sll-d5-default-s5": {
+      "checkpoint_epoch": 15,
+      "parameters": 20989,
+      "trainable_parameters": 20989,
+      "clean_accuracy": 0.7347056444325878,
+      "prediction_counts": [
+        44700,
+        57971,
+        9829,
+        196,
+        104,
+        634,
+        2769
+      ]
+    },
+    "covertype-sll-d5-default-s6": {
+      "checkpoint_epoch": 25,
+      "parameters": 20989,
+      "trainable_parameters": 20989,
+      "clean_accuracy": 0.7318571809677892,
+      "prediction_counts": [
+        38957,
+        64086,
+        9566,
+        148,
+        6,
+        589,
+        2851
+      ]
+    },
+    "covertype-sll-d5-default-s7": {
+      "checkpoint_epoch": 25,
+      "parameters": 20989,
+      "trainable_parameters": 20989,
+      "clean_accuracy": 0.7333631661833171,
+      "prediction_counts": [
+        42246,
+        60376,
+        9720,
+        164,
+        36,
+        731,
+        2930
+      ]
+    },
+    "covertype-sll-d5-default-s8": {
+      "checkpoint_epoch": 24,
+      "parameters": 20989,
+      "trainable_parameters": 20989,
+      "clean_accuracy": 0.7326058707606516,
+      "prediction_counts": [
+        38697,
+        63936,
+        8641,
+        328,
+        93,
+        1374,
+        3134
+      ]
+    },
+    "covertype-sll-d5-default-s9": {
+      "checkpoint_epoch": 21,
+      "parameters": 20989,
+      "trainable_parameters": 20989,
+      "clean_accuracy": 0.7340602221973616,
+      "prediction_counts": [
+        43011,
+        59507,
+        9053,
+        154,
+        113,
+        1370,
+        2995
+      ]
+    },
+    "covertype-sll-d5-corrected-s0": {
+      "checkpoint_epoch": 25,
+      "parameters": 20989,
+      "trainable_parameters": 20989,
+      "clean_accuracy": 0.7328554340249391,
+      "prediction_counts": [
+        44745,
+        57904,
+        9365,
+        109,
+        49,
+        838,
+        3193
+      ]
+    },
+    "covertype-sll-d5-corrected-s1": {
+      "checkpoint_epoch": 20,
+      "parameters": 20989,
+      "trainable_parameters": 20989,
+      "clean_accuracy": 0.731788335929365,
+      "prediction_counts": [
+        40370,
+        62239,
+        8779,
+        592,
+        46,
+        858,
+        3319
+      ]
+    },
+    "covertype-sll-d5-corrected-s2": {
+      "checkpoint_epoch": 22,
+      "parameters": 20989,
+      "trainable_parameters": 20989,
+      "clean_accuracy": 0.7346281937643606,
+      "prediction_counts": [
+        41187,
+        62250,
+        9444,
+        167,
+        1,
+        547,
+        2607
+      ]
+    },
+    "covertype-sll-d5-corrected-s3": {
+      "checkpoint_epoch": 16,
+      "parameters": 20989,
+      "trainable_parameters": 20989,
+      "clean_accuracy": 0.7339139264907102,
+      "prediction_counts": [
+        41138,
+        61738,
+        9478,
+        141,
+        0,
+        629,
+        3079
+      ]
+    },
+    "covertype-sll-d5-corrected-s4": {
+      "checkpoint_epoch": 22,
+      "parameters": 20989,
+      "trainable_parameters": 20989,
+      "clean_accuracy": 0.7357211087493438,
+      "prediction_counts": [
+        40307,
+        61710,
+        9932,
+        90,
+        114,
+        808,
+        3242
+      ]
+    },
+    "covertype-sll-d5-corrected-s5": {
+      "checkpoint_epoch": 25,
+      "parameters": 20989,
+      "trainable_parameters": 20989,
+      "clean_accuracy": 0.7359620663838283,
+      "prediction_counts": [
+        40895,
+        62550,
+        9711,
+        116,
+        73,
+        397,
+        2461
+      ]
+    },
+    "covertype-sll-d5-corrected-s6": {
+      "checkpoint_epoch": 21,
+      "parameters": 20989,
+      "trainable_parameters": 20989,
+      "clean_accuracy": 0.7327435608374999,
+      "prediction_counts": [
+        39305,
+        62685,
+        9628,
+        283,
+        65,
+        1117,
+        3120
+      ]
+    },
+    "covertype-sll-d5-corrected-s7": {
+      "checkpoint_epoch": 25,
+      "parameters": 20989,
+      "trainable_parameters": 20989,
+      "clean_accuracy": 0.7357211087493438,
+      "prediction_counts": [
+        42740,
+        59428,
+        9856,
+        222,
+        34,
+        733,
+        3190
+      ]
+    },
+    "covertype-sll-d5-corrected-s8": {
+      "checkpoint_epoch": 23,
+      "parameters": 20989,
+      "trainable_parameters": 20989,
+      "clean_accuracy": 0.7300586043389585,
+      "prediction_counts": [
+        44260,
+        58117,
+        9467,
+        85,
+        0,
+        1632,
+        2642
+      ]
+    },
+    "covertype-sll-d5-corrected-s9": {
+      "checkpoint_epoch": 21,
+      "parameters": 20989,
+      "trainable_parameters": 20989,
+      "clean_accuracy": 0.734808911990224,
+      "prediction_counts": [
+        41804,
+        60529,
+        8736,
+        168,
+        75,
+        1644,
+        3247
+      ]
+    },
+    "covertype-sll-d15-zero-s0": {
+      "checkpoint_epoch": 22,
+      "parameters": 63229,
+      "trainable_parameters": 63229,
+      "clean_accuracy": 0.7045773344922248,
+      "prediction_counts": [
+        42569,
+        64841,
+        8611,
+        0,
+        0,
+        0,
+        182
+      ]
+    },
+    "covertype-sll-d15-zero-s1": {
+      "checkpoint_epoch": 20,
+      "parameters": 63229,
+      "trainable_parameters": 63229,
+      "clean_accuracy": 0.7243530717795582,
+      "prediction_counts": [
+        41819,
+        62577,
+        9588,
+        0,
+        0,
+        0,
+        2219
+      ]
+    },
+    "covertype-sll-d15-zero-s2": {
+      "checkpoint_epoch": 25,
+      "parameters": 63229,
+      "trainable_parameters": 63229,
+      "clean_accuracy": 0.727235957763569,
+      "prediction_counts": [
+        41023,
+        62750,
+        10354,
+        0,
+        0,
+        0,
+        2076
+      ]
+    },
+    "covertype-sll-d15-zero-s3": {
+      "checkpoint_epoch": 18,
+      "parameters": 63229,
+      "trainable_parameters": 63229,
+      "clean_accuracy": 0.7055927988089808,
+      "prediction_counts": [
+        41366,
+        65480,
+        9202,
+        0,
+        0,
+        0,
+        155
+      ]
+    },
+    "covertype-sll-d15-zero-s4": {
+      "checkpoint_epoch": 22,
+      "parameters": 63229,
+      "trainable_parameters": 63229,
+      "clean_accuracy": 0.7252136347598599,
+      "prediction_counts": [
+        40477,
+        62012,
+        10639,
+        0,
+        0,
+        0,
+        3075
+      ]
+    },
+    "covertype-sll-d15-zero-s5": {
+      "checkpoint_epoch": 24,
+      "parameters": 63229,
+      "trainable_parameters": 63229,
+      "clean_accuracy": 0.7151450478903298,
+      "prediction_counts": [
+        32969,
+        70384,
+        9349,
+        0,
+        0,
+        0,
+        3501
+      ]
+    },
+    "covertype-sll-d15-zero-s6": {
+      "checkpoint_epoch": 21,
+      "parameters": 63229,
+      "trainable_parameters": 63229,
+      "clean_accuracy": 0.7162293572455101,
+      "prediction_counts": [
+        42118,
+        62600,
+        10394,
+        0,
+        0,
+        0,
+        1091
+      ]
+    },
+    "covertype-sll-d15-zero-s7": {
+      "checkpoint_epoch": 25,
+      "parameters": 63229,
+      "trainable_parameters": 63229,
+      "clean_accuracy": 0.721212016901457,
+      "prediction_counts": [
+        44077,
+        61174,
+        9838,
+        0,
+        0,
+        0,
+        1114
+      ]
+    },
+    "covertype-sll-d15-zero-s8": {
+      "checkpoint_epoch": 24,
+      "parameters": 63229,
+      "trainable_parameters": 63229,
+      "clean_accuracy": 0.7225803120401366,
+      "prediction_counts": [
+        39876,
+        64236,
+        10202,
+        0,
+        0,
+        0,
+        1889
+      ]
+    },
+    "covertype-sll-d15-zero-s9": {
+      "checkpoint_epoch": 25,
+      "parameters": 63229,
+      "trainable_parameters": 63229,
+      "clean_accuracy": 0.7195425247196716,
+      "prediction_counts": [
+        45805,
+        58835,
+        9983,
+        0,
+        0,
+        0,
+        1580
+      ]
+    },
+    "covertype-sll-d15-default-s0": {
+      "checkpoint_epoch": 22,
+      "parameters": 63229,
+      "trainable_parameters": 63229,
+      "clean_accuracy": 0.7110917962531088,
+      "prediction_counts": [
+        41775,
+        65041,
+        8932,
+        0,
+        0,
+        0,
+        455
+      ]
+    },
+    "covertype-sll-d15-default-s1": {
+      "checkpoint_epoch": 23,
+      "parameters": 63229,
+      "trainable_parameters": 63229,
+      "clean_accuracy": 0.7085359242016127,
+      "prediction_counts": [
+        44137,
+        63595,
+        8337,
+        0,
+        0,
+        0,
+        134
+      ]
+    },
+    "covertype-sll-d15-default-s2": {
+      "checkpoint_epoch": 25,
+      "parameters": 63229,
+      "trainable_parameters": 63229,
+      "clean_accuracy": 0.7280448869650525,
+      "prediction_counts": [
+        42057,
+        61820,
+        10119,
+        0,
+        0,
+        0,
+        2207
+      ]
+    },
+    "covertype-sll-d15-default-s3": {
+      "checkpoint_epoch": 25,
+      "parameters": 63229,
+      "trainable_parameters": 63229,
+      "clean_accuracy": 0.7082519384181132,
+      "prediction_counts": [
+        39200,
+        66351,
+        10006,
+        0,
+        0,
+        0,
+        646
+      ]
+    },
+    "covertype-sll-d15-default-s4": {
+      "checkpoint_epoch": 25,
+      "parameters": 63229,
+      "trainable_parameters": 63229,
+      "clean_accuracy": 0.7193618064938082,
+      "prediction_counts": [
+        37576,
+        65733,
+        9889,
+        0,
+        0,
+        0,
+        3005
+      ]
+    },
+    "covertype-sll-d15-default-s5": {
+      "checkpoint_epoch": 24,
+      "parameters": 63229,
+      "trainable_parameters": 63229,
+      "clean_accuracy": 0.7134497388191354,
+      "prediction_counts": [
+        34503,
+        69734,
+        10163,
+        0,
+        0,
+        0,
+        1803
+      ]
+    },
+    "covertype-sll-d15-default-s6": {
+      "checkpoint_epoch": 24,
+      "parameters": 63229,
+      "trainable_parameters": 63229,
+      "clean_accuracy": 0.7064705730488886,
+      "prediction_counts": [
+        47889,
+        57010,
+        11304,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "covertype-sll-d15-default-s7": {
+      "checkpoint_epoch": 25,
+      "parameters": 63229,
+      "trainable_parameters": 63229,
+      "clean_accuracy": 0.7281997883015069,
+      "prediction_counts": [
+        44568,
+        59325,
+        10329,
+        0,
+        0,
+        0,
+        1981
+      ]
+    },
+    "covertype-sll-d15-default-s8": {
+      "checkpoint_epoch": 25,
+      "parameters": 63229,
+      "trainable_parameters": 63229,
+      "clean_accuracy": 0.7198953555415953,
+      "prediction_counts": [
+        42937,
+        61849,
+        10178,
+        0,
+        0,
+        0,
+        1239
+      ]
+    },
+    "covertype-sll-d15-default-s9": {
+      "checkpoint_epoch": 25,
+      "parameters": 63229,
+      "trainable_parameters": 63229,
+      "clean_accuracy": 0.7258848738844952,
+      "prediction_counts": [
+        44876,
+        58997,
+        10506,
+        0,
+        0,
+        0,
+        1824
+      ]
+    },
+    "covertype-sll-d15-corrected-s0": {
+      "checkpoint_epoch": 17,
+      "parameters": 63229,
+      "trainable_parameters": 63229,
+      "clean_accuracy": 0.6836828653304993,
+      "prediction_counts": [
+        50689,
+        54193,
+        11321,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "covertype-sll-d15-corrected-s1": {
+      "checkpoint_epoch": 1,
+      "parameters": 63229,
+      "trainable_parameters": 63229,
+      "clean_accuracy": 0.4869323511441185,
+      "prediction_counts": [
+        0,
+        116203,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "covertype-sll-d15-corrected-s2": {
+      "checkpoint_epoch": 25,
+      "parameters": 63229,
+      "trainable_parameters": 63229,
+      "clean_accuracy": 0.70869943116787,
+      "prediction_counts": [
+        44405,
+        61559,
+        9925,
+        0,
+        0,
+        0,
+        314
+      ]
+    },
+    "covertype-sll-d15-corrected-s3": {
+      "checkpoint_epoch": 18,
+      "parameters": 63229,
+      "trainable_parameters": 63229,
+      "clean_accuracy": 0.7068061926112063,
+      "prediction_counts": [
+        43161,
+        64072,
+        8908,
+        0,
+        0,
+        0,
+        62
+      ]
+    },
+    "covertype-sll-d15-corrected-s4": {
+      "checkpoint_epoch": 22,
+      "parameters": 63229,
+      "trainable_parameters": 63229,
+      "clean_accuracy": 0.7041040248530589,
+      "prediction_counts": [
+        42899,
+        65207,
+        8032,
+        0,
+        0,
+        0,
+        65
+      ]
+    },
+    "covertype-sll-d15-corrected-s5": {
+      "checkpoint_epoch": 14,
+      "parameters": 63229,
+      "trainable_parameters": 63229,
+      "clean_accuracy": 0.7042675318193162,
+      "prediction_counts": [
+        43298,
+        64380,
+        8248,
+        0,
+        0,
+        0,
+        277
+      ]
+    },
+    "covertype-sll-d15-corrected-s6": {
+      "checkpoint_epoch": 21,
+      "parameters": 63229,
+      "trainable_parameters": 63229,
+      "clean_accuracy": 0.7055153481407537,
+      "prediction_counts": [
+        43927,
+        63608,
+        8606,
+        0,
+        0,
+        0,
+        62
+      ]
+    },
+    "covertype-sll-d15-corrected-s7": {
+      "checkpoint_epoch": 25,
+      "parameters": 63229,
+      "trainable_parameters": 63229,
+      "clean_accuracy": 0.7022710257050162,
+      "prediction_counts": [
+        44019,
+        64132,
+        7959,
+        0,
+        0,
+        0,
+        93
+      ]
+    },
+    "covertype-sll-d15-corrected-s8": {
+      "checkpoint_epoch": 23,
+      "parameters": 63229,
+      "trainable_parameters": 63229,
+      "clean_accuracy": 0.7060661084481468,
+      "prediction_counts": [
+        45284,
+        62132,
+        8725,
+        0,
+        0,
+        0,
+        62
+      ]
+    },
+    "covertype-sll-d15-corrected-s9": {
+      "checkpoint_epoch": 21,
+      "parameters": 63229,
+      "trainable_parameters": 63229,
+      "clean_accuracy": 0.7055067425109507,
+      "prediction_counts": [
+        44414,
+        63871,
+        7668,
+        0,
+        0,
+        0,
+        250
+      ]
+    },
+    "covertype-sll-d30-zero-s0": {
+      "checkpoint_epoch": 1,
+      "parameters": 126589,
+      "trainable_parameters": 126589,
+      "clean_accuracy": 0.4869323511441185,
+      "prediction_counts": [
+        0,
+        116203,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "covertype-sll-d30-zero-s1": {
+      "checkpoint_epoch": 1,
+      "parameters": 126589,
+      "trainable_parameters": 126589,
+      "clean_accuracy": 0.4869323511441185,
+      "prediction_counts": [
+        0,
+        116203,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "covertype-sll-d30-zero-s2": {
+      "checkpoint_epoch": 25,
+      "parameters": 126589,
+      "trainable_parameters": 126589,
+      "clean_accuracy": 0.7097407123740351,
+      "prediction_counts": [
+        41993,
+        65451,
+        8697,
+        0,
+        0,
+        0,
+        62
+      ]
+    },
+    "covertype-sll-d30-zero-s3": {
+      "checkpoint_epoch": 1,
+      "parameters": 126589,
+      "trainable_parameters": 126589,
+      "clean_accuracy": 0.4869323511441185,
+      "prediction_counts": [
+        0,
+        116203,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "covertype-sll-d30-zero-s4": {
+      "checkpoint_epoch": 1,
+      "parameters": 126589,
+      "trainable_parameters": 126589,
+      "clean_accuracy": 0.4869323511441185,
+      "prediction_counts": [
+        0,
+        116203,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "covertype-sll-d30-zero-s5": {
+      "checkpoint_epoch": 14,
+      "parameters": 126589,
+      "trainable_parameters": 126589,
+      "clean_accuracy": 0.7087252480572791,
+      "prediction_counts": [
+        45449,
+        62117,
+        8575,
+        0,
+        0,
+        0,
+        62
+      ]
+    },
+    "covertype-sll-d30-zero-s6": {
+      "checkpoint_epoch": 21,
+      "parameters": 126589,
+      "trainable_parameters": 126589,
+      "clean_accuracy": 0.7136046401555898,
+      "prediction_counts": [
+        46838,
+        60066,
+        9134,
+        0,
+        0,
+        0,
+        165
+      ]
+    },
+    "covertype-sll-d30-zero-s7": {
+      "checkpoint_epoch": 25,
+      "parameters": 126589,
+      "trainable_parameters": 126589,
+      "clean_accuracy": 0.7128301334733183,
+      "prediction_counts": [
+        43499,
+        63919,
+        8644,
+        0,
+        0,
+        0,
+        141
+      ]
+    },
+    "covertype-sll-d30-zero-s8": {
+      "checkpoint_epoch": 1,
+      "parameters": 126589,
+      "trainable_parameters": 126589,
+      "clean_accuracy": 0.4869323511441185,
+      "prediction_counts": [
+        0,
+        116203,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "covertype-sll-d30-zero-s9": {
+      "checkpoint_epoch": 1,
+      "parameters": 126589,
+      "trainable_parameters": 126589,
+      "clean_accuracy": 0.4869323511441185,
+      "prediction_counts": [
+        0,
+        116203,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "covertype-sll-d30-default-s0": {
+      "checkpoint_epoch": 1,
+      "parameters": 126589,
+      "trainable_parameters": 126589,
+      "clean_accuracy": 0.4869323511441185,
+      "prediction_counts": [
+        0,
+        116203,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "covertype-sll-d30-default-s1": {
+      "checkpoint_epoch": 1,
+      "parameters": 126589,
+      "trainable_parameters": 126589,
+      "clean_accuracy": 0.4869323511441185,
+      "prediction_counts": [
+        0,
+        116203,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "covertype-sll-d30-default-s2": {
+      "checkpoint_epoch": 1,
+      "parameters": 126589,
+      "trainable_parameters": 126589,
+      "clean_accuracy": 0.4869323511441185,
+      "prediction_counts": [
+        0,
+        116203,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "covertype-sll-d30-default-s3": {
+      "checkpoint_epoch": 1,
+      "parameters": 126589,
+      "trainable_parameters": 126589,
+      "clean_accuracy": 0.4869323511441185,
+      "prediction_counts": [
+        0,
+        116203,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "covertype-sll-d30-default-s4": {
+      "checkpoint_epoch": 1,
+      "parameters": 126589,
+      "trainable_parameters": 126589,
+      "clean_accuracy": 0.4869323511441185,
+      "prediction_counts": [
+        0,
+        116203,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "covertype-sll-d30-default-s5": {
+      "checkpoint_epoch": 1,
+      "parameters": 126589,
+      "trainable_parameters": 126589,
+      "clean_accuracy": 0.4869323511441185,
+      "prediction_counts": [
+        0,
+        116203,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "covertype-sll-d30-default-s6": {
+      "checkpoint_epoch": 1,
+      "parameters": 126589,
+      "trainable_parameters": 126589,
+      "clean_accuracy": 0.4869323511441185,
+      "prediction_counts": [
+        0,
+        116203,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "covertype-sll-d30-default-s7": {
+      "checkpoint_epoch": 1,
+      "parameters": 126589,
+      "trainable_parameters": 126589,
+      "clean_accuracy": 0.4869323511441185,
+      "prediction_counts": [
+        0,
+        116203,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "covertype-sll-d30-default-s8": {
+      "checkpoint_epoch": 1,
+      "parameters": 126589,
+      "trainable_parameters": 126589,
+      "clean_accuracy": 0.4869323511441185,
+      "prediction_counts": [
+        0,
+        116203,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "covertype-sll-d30-default-s9": {
+      "checkpoint_epoch": 1,
+      "parameters": 126589,
+      "trainable_parameters": 126589,
+      "clean_accuracy": 0.4869323511441185,
+      "prediction_counts": [
+        0,
+        116203,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "covertype-sll-d30-corrected-s0": {
+      "checkpoint_epoch": 1,
+      "parameters": 126589,
+      "trainable_parameters": 126589,
+      "clean_accuracy": 0.4869323511441185,
+      "prediction_counts": [
+        0,
+        116203,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "covertype-sll-d30-corrected-s1": {
+      "checkpoint_epoch": 1,
+      "parameters": 126589,
+      "trainable_parameters": 126589,
+      "clean_accuracy": 0.4869323511441185,
+      "prediction_counts": [
+        0,
+        116203,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "covertype-sll-d30-corrected-s2": {
+      "checkpoint_epoch": 1,
+      "parameters": 126589,
+      "trainable_parameters": 126589,
+      "clean_accuracy": 0.4869323511441185,
+      "prediction_counts": [
+        0,
+        116203,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "covertype-sll-d30-corrected-s3": {
+      "checkpoint_epoch": 1,
+      "parameters": 126589,
+      "trainable_parameters": 126589,
+      "clean_accuracy": 0.4869323511441185,
+      "prediction_counts": [
+        0,
+        116203,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "covertype-sll-d30-corrected-s4": {
+      "checkpoint_epoch": 1,
+      "parameters": 126589,
+      "trainable_parameters": 126589,
+      "clean_accuracy": 0.4869323511441185,
+      "prediction_counts": [
+        0,
+        116203,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "covertype-sll-d30-corrected-s5": {
+      "checkpoint_epoch": 1,
+      "parameters": 126589,
+      "trainable_parameters": 126589,
+      "clean_accuracy": 0.4869323511441185,
+      "prediction_counts": [
+        0,
+        116203,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "covertype-sll-d30-corrected-s6": {
+      "checkpoint_epoch": 1,
+      "parameters": 126589,
+      "trainable_parameters": 126589,
+      "clean_accuracy": 0.4869323511441185,
+      "prediction_counts": [
+        0,
+        116203,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "covertype-sll-d30-corrected-s7": {
+      "checkpoint_epoch": 1,
+      "parameters": 126589,
+      "trainable_parameters": 126589,
+      "clean_accuracy": 0.4869323511441185,
+      "prediction_counts": [
+        0,
+        116203,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "covertype-sll-d30-corrected-s8": {
+      "checkpoint_epoch": 1,
+      "parameters": 126589,
+      "trainable_parameters": 126589,
+      "clean_accuracy": 0.4869323511441185,
+      "prediction_counts": [
+        0,
+        116203,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "covertype-sll-d30-corrected-s9": {
+      "checkpoint_epoch": 1,
+      "parameters": 126589,
+      "trainable_parameters": 126589,
+      "clean_accuracy": 0.4869323511441185,
+      "prediction_counts": [
+        0,
+        116203,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  }
+}

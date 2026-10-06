@@ -1,0 +1,64 @@
+\begin{table*}[pos=htbp]
+\centering
+\small
+\caption{Feedforward CIFAR-10 accuracy (percent; mean $\pm$ sample standard deviation over three seeds). Certification uses $\ell_2$ radius $0.5$ on all 10,000 test images. Depth counts hidden layers; each model has an additional linear logit head. Corrected denotes the variance-based bias heuristic.}
+\begin{tabular}{llrrrr}
+Model & Depth & Clean: zero & Clean: corrected & Certified: zero & Certified: corrected \\
+\hline
+AOL & 5 & 44.30 $\pm$ 0.28 & 43.65 $\pm$ 0.27 & 17.89 $\pm$ 0.68 & 16.21 $\pm$ 0.92 \\
+AOL & 15 & 10.00 $\pm$ 0.00 & 10.00 $\pm$ 0.00 & 0.00 $\pm$ 0.00 & 0.00 $\pm$ 0.00 \\
+AOL & 30 & 10.00 $\pm$ 0.00 & 10.00 $\pm$ 0.00 & 0.00 $\pm$ 0.00 & 0.00 $\pm$ 0.00 \\
+SLL & 5 & 44.17 $\pm$ 0.26 & 43.95 $\pm$ 0.37 & 18.10 $\pm$ 0.63 & 16.73 $\pm$ 0.86 \\
+SLL & 15 & 10.00 $\pm$ 0.00 & 10.00 $\pm$ 0.00 & 0.00 $\pm$ 0.00 & 0.00 $\pm$ 0.00 \\
+SLL & 30 & 10.00 $\pm$ 0.00 & 10.00 $\pm$ 0.00 & 0.00 $\pm$ 0.00 & 0.00 $\pm$ 0.00 \\
+\end{tabular}
+\label{tab:feedforward-results}
+\end{table*}
+
+\begin{table}[pos=htbp]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\caption{Covertype test accuracy (percent; mean $\pm$ sample standard deviation over ten seeds). All models use the same 116,203 test examples and 25-epoch training budget.}
+\begin{tabular}{lrrr}
+Depth & Zero & Default & Corrected \\
+\hline
+5 & 73.24 $\pm$ 0.12 & 73.28 $\pm$ 0.19 & 73.38 $\pm$ 0.19 \\
+15 & 71.82 $\pm$ 0.79 & 71.69 $\pm$ 0.85 & 68.14 $\pm$ 6.87 \\
+30 & 57.66 $\pm$ 11.58 & 48.69 $\pm$ 0.00 & 48.69 $\pm$ 0.00 \\
+\end{tabular}
+\label{tab:covertype-results}
+\end{table}
+
+\begin{table}[pos=htbp]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\caption{Residual SLL CIFAR-10 clean and noisy-input accuracy (percent; mean $\pm$ sample standard deviation over three seeds, all 10,000 test images). Columns compare default and corrected biases. Gaussian noise is clipped to $[0,1]$; $s$ denotes its standard deviation before clipping.}
+\begin{tabular}{lrr}
+Evaluation & Default & Corrected \\
+\hline
+Clean & 71.14 $\pm$ 0.30 & 70.70 $\pm$ 0.18 \\
+Noise $s=0.01$ & 71.05 $\pm$ 0.27 & 70.62 $\pm$ 0.21 \\
+Noise $s=0.03$ & 70.70 $\pm$ 0.18 & 70.01 $\pm$ 0.19 \\
+Noise $s=0.05$ & 69.72 $\pm$ 0.25 & 68.97 $\pm$ 0.08 \\
+\end{tabular}
+\label{tab:residual-noise}
+\end{table}
+
+\begin{table*}[pos=htbp]
+\centering
+\small
+\caption{Residual SLL CIFAR-10 certified and attack accuracy (percent; mean $\pm$ sample standard deviation over three seeds). Full-test certificates use 10,000 examples; subset certificates, PGD and AutoAttack use the same fixed 1,000 examples. PGD uses 100 steps and five restarts; AutoAttack uses its standard $\ell_2$ configuration.}
+\begin{tabular}{llrrrr}
+Radius & Bias & Certified: full & Certified: subset & PGD: subset & AutoAttack: subset \\
+\hline
+0.25 & Default & 54.63 $\pm$ 0.70 & 53.47 $\pm$ 1.08 & 63.17 $\pm$ 0.55 & 61.53 $\pm$ 0.42 \\
+0.25 & Corrected & 54.34 $\pm$ 0.33 & 53.40 $\pm$ 0.95 & 62.67 $\pm$ 0.23 & 60.77 $\pm$ 0.45 \\
+0.5 & Default & 39.13 $\pm$ 0.55 & 37.47 $\pm$ 0.32 & 55.37 $\pm$ 0.76 & 51.07 $\pm$ 0.40 \\
+0.5 & Corrected & 39.51 $\pm$ 0.41 & 37.47 $\pm$ 0.85 & 54.53 $\pm$ 0.75 & 50.93 $\pm$ 0.74 \\
+1.0 & Default & 17.62 $\pm$ 0.59 & 17.37 $\pm$ 0.90 & 39.27 $\pm$ 0.21 & 33.77 $\pm$ 0.40 \\
+1.0 & Corrected & 17.99 $\pm$ 0.76 & 17.43 $\pm$ 0.67 & 38.30 $\pm$ 0.72 & 33.27 $\pm$ 0.15 \\
+\end{tabular}
+\label{tab:residual-robustness}
+\end{table*}
