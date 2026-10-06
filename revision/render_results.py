@@ -17,10 +17,12 @@ def render():
         m=groups[group][metric]
         return f"{100*m['mean']:.2f} $\\pm$ {100*m['sd']:.2f}"
     out=[]
-    def table(caption,columns,header,rows,label):
-        out.extend([r'\begin{table*}[t]',r'\centering',r'\small',r'\caption{'+caption+'}',
+    def table(caption,columns,header,rows,label,wide=True):
+        env = 'table*' if wide else 'table'
+        out.extend([r'\begin{'+env+r'}[pos=htbp]',r'\centering',r'\small',
+                    *([] if wide else [r'\setlength{\tabcolsep}{3pt}']),r'\caption{'+caption+'}',
                     r'\begin{tabular}{'+columns+'}',header+r' \\',r'\hline',*rows,
-                    r'\end{tabular}',r'\label{'+label+'}',r'\end{table*}',''])
+                    r'\end{tabular}',r'\label{'+label+'}',r'\end{'+env+'}',''])
     rows=[]
     for model in ('aol','sll'):
         for depth in (5,15,30):
@@ -32,13 +34,14 @@ def render():
     for depth in (5,15,30):
         rows.append(str(depth)+' & '+' & '.join(fmt(('covertype','sll',depth,b),'clean') for b in ('zero','default','corrected'))+r' \\')
     table('Covertype test accuracy (percent; mean $\\pm$ sample standard deviation over ten seeds). All models use the same 116,203 test examples and 25-epoch training budget.',
-          'lrrr','Depth & Zero bias & Default bias & Corrected bias',rows,'tab:covertype-results')
+          'lrrr','Depth & Zero & Default & Corrected',rows,'tab:covertype-results',wide=False)
     rows=[]
-    for bias in ('default','corrected'):
-        g=('cifar10','residual',20,bias)
-        rows.append(bias.capitalize()+' & '+' & '.join(fmt(g,m) for m in ('clean','noise_0.01','noise_0.03','noise_0.05'))+r' \\')
-    table('Residual SLL CIFAR-10 clean and noisy-input accuracy (percent; mean $\\pm$ sample standard deviation over three seeds, all 10,000 test images). Gaussian noise is clipped to $[0,1]$; $s$ denotes its standard deviation before clipping.',
-          'lrrrr','Bias & Clean & Noise $s=0.01$ & Noise $s=0.03$ & Noise $s=0.05$',rows,'tab:residual-noise')
+    for metric,label in [('clean','Clean'),('noise_0.01',r'Noise $s=0.01$'),
+                         ('noise_0.03',r'Noise $s=0.03$'),('noise_0.05',r'Noise $s=0.05$')]:
+        rows.append(label+' & '+' & '.join(fmt(('cifar10','residual',20,bias),metric)
+                    for bias in ('default','corrected'))+r' \\')
+    table('Residual SLL CIFAR-10 clean and noisy-input accuracy (percent; mean $\\pm$ sample standard deviation over three seeds, all 10,000 test images). Columns compare default and corrected biases. Gaussian noise is clipped to $[0,1]$; $s$ denotes its standard deviation before clipping.',
+          'lrr','Evaluation & Default & Corrected',rows,'tab:residual-noise',wide=False)
     rows=[]
     for eps in ('0.25','0.5','1.0'):
         for bias in ('default','corrected'):
